@@ -162,7 +162,7 @@ var filter = audioCtx.createBiquadFilter();
 
 // REVERB NODE 
 // 2) Load the impulse response; upon load, connect it to the audio output.
-var reverbUrl = "http://reverbjs.org/Library/AbernyteGrainSilo.m4a";
+var reverbUrl = "https://meet.ideas-block.com/files/AbernyteGrainSilo.m4a";
 var reverbNode = audioCtx.createReverbFromUrl(reverbUrl, function() {
   reverbNode.connect(audioCtx.destination);
 });
