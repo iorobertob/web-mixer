@@ -14,7 +14,7 @@ html, body {
 }
 body {
   padding: 1px;
-  background: radial-gradient(#1a1d22, #121318);
+  /*background: radial-gradient(#1a1d22, #121318);*/
 }
 .defs {
   position: absolute;
