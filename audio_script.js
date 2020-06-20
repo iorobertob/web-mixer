@@ -1,10 +1,34 @@
 console.clear();
 
+function createDownloadLink() {
+    recorder && recorder.exportWAV(function(blob) {
+      var url = URL.createObjectURL(blob);
+      var li = document.createElement('li');
+      var au = document.createElement('audio');
+      var hf = document.createElement('a');
+      
+      au.controls = true;
+      au.src = url;
+      hf.href = url;
+      hf.download = new Date().toISOString() + '.wav';
+      hf.innerHTML = hf.download;
+      li.appendChild(au);
+      li.appendChild(hf);
+      recordingslist.appendChild(li);
+    });
+}
+
+
 // instigate our audio context
 
 // for cross browser
 const AudioContext = window.AudioContext || window.webkitAudioContext;
+
 const audioCtx = new AudioContext();
+
+var tuna = new Tuna(audioCtx);
+
+
 
 reverbjs.extend(audioCtx);
 
@@ -168,6 +192,33 @@ var reverbNode = audioCtx.createReverbFromUrl(reverbUrl, function() {
 });
 
 
+// CHORUS NODE 
+var chorusNode = new tuna.Chorus({
+    rate: 7,         //0.01 to 8+
+    feedback: 0.5,     //0 to 1+
+    delay: 0.045,     //0 to 1
+    bypass: 0          //the value 1 starts the effect as bypassed, 0 or 1
+});
+
+
+// DELAY NODE 
+var delayNode = new tuna.Delay({
+    feedback: 0.45,    //0 to 1+
+    delayTime: 150,    //1 to 10000 milliseconds
+    wetLevel: 0.95,    //0 to 1+
+    dryLevel: 0.0,       //0 to 1+
+    cutoff: 10000,      //cutoff frequency of the built in lowpass-filter. 20 to 22050
+    bypass: 0
+});
+
+var overdriveNode = new tuna.Overdrive({
+    outputGain: -42,           //-42 to 0 in dB
+    drive: 0.7,              //0 to 1
+    curveAmount: 1,          //0 to 1
+    algorithmIndex: 0,       //0 to 5, selects one of our drive algorithms
+    bypass: 0
+});
+
 // connect our graph
 track.connect(gainNode).connect(audioCtx.destination); // 1
 track2.connect(gainNode2).connect(audioCtx.destination); // 2
@@ -177,6 +228,9 @@ track5.connect(gainNode5).connect(audioCtx.destination); // 5
 
 // track.connect(filter).connect(audioCtx.destination); //1
 track.connect(gainNodeAux1_1).connect(reverbNode); //1
+// track.connect(gainNodeAux1_1).connect(delayNode).connect(audioCtx.destination);; //1
+// track.connect(gainNodeAux1_1).connect(chorusNode).connect(audioCtx.destination);; //1
+// track.connect(gainNodeAux1_1).connect(overdriveNode).connect(audioCtx.destination);; //1
 track2.connect(gainNodeAux1_2).connect(reverbNode); //2
 track3.connect(gainNodeAux1_3).connect(reverbNode); //3
 track4.connect(gainNodeAux1_4).connect(reverbNode); //4
@@ -184,6 +238,15 @@ track5.connect(gainNodeAux1_5).connect(reverbNode); //5
 
 filter.type = 'lowpass';
 filter.frequency.value = 300;
+
+
+
+// var record_stream = audioCtx.createMediaStreamDestination(audioCtx.destination).stream;
+
+// var input = audioCtx.createMediaStreamSource(record_stream);
+
+var recorder = new Recorder(gainNode);
+
 
 const powerButton = document.querySelector('.control-power');
 
@@ -219,6 +282,9 @@ powerButton.addEventListener('click', function() {
 		audioElement4.play();
 		audioElement5.play();
 		this.dataset.playing = 'true';
+
+		recorder && recorder.record();
+
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
 		audioElement.pause();
@@ -227,6 +293,14 @@ powerButton.addEventListener('click', function() {
 		audioElement4.pause();
 		audioElement5.pause();
 		this.dataset.playing = 'false';
+
+		recorder && recorder.stop();
+		// create WAV download link using audio data blob
+    	createDownloadLink();
+    
+    	recorder.clear();
+
+
 	}
 	let state = this.getAttribute('aria-checked') === "true" ? true : false;
 	this.setAttribute( 'aria-checked', state ? "false" : "true" );
