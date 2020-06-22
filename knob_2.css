@@ -29,10 +29,29 @@
   /* Value Counter */
 }
 .adjustment-aux1 {
-    --side: hsla(32, 80%, 30%, 0.5);
-    
+    --side: hsla(32, 80%, 30%, 0.5);   /* Shadow color */
 }
-
+.adjustment-aux1 .knob{
+      background: hsla(32, 100%, 50%, 1); /* Front color */
+}
+.adjustment-aux2 {
+    --side: hsla(2, 60%, 30%, 0.5);   /* Shadow color */
+}
+.adjustment-aux2 .knob{
+    background: hsla(02, 80%, 50%, 1);  /* Front color */
+}
+.adjustment-aux3 {
+    --side: hsla(80, 60%, 30%, 0.5);   /* Shadow color */
+}
+.adjustment-aux3 .knob{
+    background: hsla(80, 60%, 50%, 1);  /* Front color */
+}
+.adjustment-aux4 {
+    --side: hsla(200, 60%, 30%, 0.5);   /* Shadow color */
+}
+.adjustment-aux4 .knob{
+    background: hsla(200, 60%, 50%, 1);  /* Front color */
+}
 
 
 .adjustment::after {
@@ -100,7 +119,4 @@ input.aux[type="range"]{
 }
 
 
-.adjustment-aux1 .knob{
-      background: hsla(32, 100%, 50%, 1);
-  }
 

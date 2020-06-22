@@ -34,19 +34,7 @@ body {
 @media screen and (max-width: 570px) {
 	#boombox {max-width: 600px;}
 }
-.boombox-handle {
-	margin: 0px 5vw; height: 12vh;
-	background:
-		var(--white)
-		linear-gradient(180deg,
-			var(--boxHigh) 4vmin,
-			var(--black) 4vmin,
-			var(--black) 5vmin,
-			var(--white) 5vmin)
-		no-repeat;
-	border: var(--border); border-bottom-width: 0px;
-	border-radius: var(--borderRad);
-}
+
 .boombox-body {
 	/*gradient with two circles for speakers*/
 /* 	padding-top: 3vh; */
@@ -80,14 +68,17 @@ body {
 
 .master-controls {
 	display: grid;
-	grid-template-rows: repeat(2, auto) 300px auto;
-	grid-template-columns: repeat(5, 20%) 12%;
+	grid-template-rows: repeat(5, auto) 300px auto;
+	grid-template-columns: repeat(6, 16%) 12% auto;
 	/*name our grid areas so they are more manipulative later*/
 	grid-template-areas:
-		"auxone auxtwo auxthree auxfour auxfive auxpower"
-		"aux2_1 aux2_2 aux2_3 aux2_4 aux2_5 aux2_power"
-		"vol1 vol2 vol3 vol4 vol5 power"
-		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabpower";
+		"auxone auxtwo auxthree auxfour auxfive auxmaster auxpower"
+		"aux2_1 aux2_2 aux2_3 aux2_4 aux2_5 auxmaster2 aux2_power"
+		"aux3_1 aux3_2 aux3_3 aux3_4 aux3_5 auxmaster3 aux3_power"
+		"aux4_1 aux4_2 aux4_3 aux4_4 aux4_5 auxmaster4 aux4_power"
+		"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
+		"vol1 vol2 vol3 vol4 vol5 volmaster power"
+		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	justify-items: center; align-items: center;
 	padding: 2vmax;
 	background-color: var(--boxSecond);
@@ -99,10 +90,13 @@ body {
 		grid-gap: 10px;
 		grid-template-columns: 16% 1fr 12%;
 		grid-template-areas:
-			"auxone auxtwo auxthree auxfour auxfive auxpower"
-			"aux2_1 aux2_2 aux2_3 aux2_4 aux2_5 aux2_power"
-			"vol1 vol2 vol3 vol4 vol5 power"
-			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabpower";
+			"auxone auxtwo auxthree auxfour auxfive auxmaster auxpower"
+			"aux2_1 aux2_2 aux2_3 aux2_4 aux2_5 auxmaster2 aux2_power"
+			"aux3_1 aux3_2 aux3_3 aux3_4 aux3_5 auxmaster3 aux3_power"
+			"aux4_1 aux4_2 aux4_3 aux4_4 aux4_5 auxmaster4 aux4_power"
+			"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
+			"vol1 vol2 vol3 vol4 vol5 volmaster power"
+			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	}
 }
 
@@ -166,6 +160,96 @@ body {
 	margin-left: 0px;
 	margin-bottom: 20px;
 }
+.aux11{
+	grid-area: aux3_1; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux12{
+	grid-area: aux3_2; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux13{
+	grid-area: aux3_3; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux14{
+	grid-area: aux3_4; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux15{
+	grid-area: aux3_5; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux16{
+	grid-area: aux4_1; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux17{
+	grid-area: aux4_2; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux18{
+	grid-area: aux4_3; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux19{
+	grid-area: aux4_4; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux20{
+	grid-area: aux4_5; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux21{
+	grid-area: aux5_1; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux22{
+	grid-area: aux5_2; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux23{
+	grid-area: aux5_3; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux24{
+	grid-area: aux5_4; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux25{
+	grid-area: aux5_5; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
 
 
 
@@ -178,13 +262,17 @@ body {
 .master-controls input::after {padding-left: 1vw;}
 
 
-
-
 label[for="vol_label_1"] {grid-area: vollab1; margin-top: 15px;}
 label[for="vol_label_2"] {grid-area: vollab2; margin-top: 15px;}
 label[for="vol_label_3"] {grid-area: vollab3; margin-top: 15px;}
 label[for="vol_label_4"] {grid-area: vollab4; margin-top: 15px;}
 label[for="vol_label_5"] {grid-area: vollab5; margin-top: 15px;}
+label[for="vol_label_aux1"] {grid-area: auxmaster; margin-top: 15px;}
+label[for="vol_label_aux2"] {grid-area: auxmaster2; margin-top: 15px;}
+label[for="vol_label_aux3"] {grid-area: auxmaster3; margin-top: 15px;}
+label[for="vol_label_aux4"] {grid-area: auxmaster4; margin-top: 15px;}
+label[for="vol_label_aux5"] {grid-area: auxmaster5; margin-top: 15px;}
+label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 /*.control-panner {grid-area: panin;}
 .control-panner::before {content: 'left';}
 .control-panner::after {content: 'right';}*/
@@ -194,73 +282,62 @@ label[for="vol_label_5"] {grid-area: vollab5; margin-top: 15px;}
 	.control-volume {margin-bottom: 20px;}
 }
 
+
+.playback-controls{
+	grid-area:power; align-self: center;
+  	display: grid;	
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+	padding: 5px;
+}
+
 .control-power {
-	grid-area: power; align-self: center;
+	/*grid-area: power; align-self: center;*/
 	width: 80px; height: 80px;
-	border: 3px solid var(--black); border-radius: 20px;
+	border: 3px solid var(--black); border-radius: 5px;
 	cursor: pointer;
+	/*background-color: darkgray;*/
+	background-color: #AAAAAAAA;
+
+	/*grid-column: 2 / 6;*/
+	/*grid-row: 1 / 2;*/
 }
 .control-power span {display: none;}
 
 
-/* tape area ~~~~~~~~~~~~~~~~~~~~~~ */
-.tape {
-	display: grid;
-	grid-template-rows: 24vh 6vh;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-areas: "tape tape tape tape tape"
-		"back rewind play ff next";
+.control-rec {
+	/*grid-area: vollabpower; align-self: center;*/
+	width: 80px; height: 80px;
+	border: 3px solid var(--black); border-radius: 80px;
+	cursor: pointer;
+	margin-top: 10px;
+	/*grid-column: 2 / 6;*/
+	/*grid-row: 3 / 3;*/
+	background-color: #F00000AA;
+}
 
-	width: 26vw; margin: 0px auto;
-	background: var(--boxMain) no-repeat center center;
-	background-image:
-		radial-gradient(circle at 30%,
-			var(--boxSecond) 2vh,
-			var(--black) 2vh,
-			var(--black) 2.5vh,
-			transparent 2.5vh),
-		radial-gradient(circle at 70%,
-			var(--boxSecond) 2vh,
-			var(--black) 2vh,
-			var(--black) 2.5vh,
-			transparent 2.5vh),
-		linear-gradient(180deg,
-			transparent 9.1vh,
-			var(--black) 9.1vh,
-			var(--black) 10.1vh,
-			var(--boxHigh) 10.1vh,
-			var(--boxHigh) 20vh,
-			var(--black) 20vh,
-			var(--black) 21vh,
-			transparent 21vh),
-		radial-gradient(circle at 30%,
-			var(--boxHigh) 5vh,
-			var(--black) 5vh,
-			var(--black) 6vh,
-			transparent 6vh),
-		radial-gradient(circle at 70%,
-			var(--boxHigh) 5vh,
-			var(--black) 5vh,
-			var(--black) 6vh,
-			transparent 6vh);
-	background-size: 100% 100%, 100% 100%, 40% 100%, 100% 100%, 100% 100%;
-	border: var(--border); border-bottom-width: 0px;
-	border-radius: var(--borderRad);
-	max-width: 300px;
-}
-@media screen and (max-width: 570px) {
-	.tape {width: 80%; margin-top: 30vh;}
-}
+
+
 audio {
 	grid-area: tape;
 }
 /*TODO GIVE BUTTONS CLASSES*/
 [class^="tape-controls"] {
 	border: none;
+	width: 80px; height: 80px;
 }
-[class^="tape-controls"] span {display: none;}
-.tape-controls-play {grid-area: rewind;}
-.tape-controls-play-2 {grid-area: ff;}
+
+.playback-controls{
+	/*border:10px; */
+	border:5px solid black;
+	/*border-color: black; */
+	background-color: gray;
+}
+
+
+/*[class^="tape-controls"] span {display: none;}*/
+/*.tape-controls-play {grid-area: rewind;}*/
+/*.tape-controls-play-2 {grid-area: ff;}*/
 
 /* ~~~~~~~~~~~~~~~~ All the crazy range styling */
 input[type=range] {
@@ -361,15 +438,40 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 				background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" fill="hsla(32, 100%, 50%, 1)" /></svg>') no-repeat center center;
 			background-size: 60% 60%;
 }
-[data-power] {
+/*[data-power] {
 	background: var(--boxSecond) url('data:image/svg+xml; charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z" fill="black" /></svg>') no-repeat center center;
 	background-size: 60% 60%;
 }
 [data-power]:hover, [data-power="on"] {
 	background: var(--boxHigh) url('data:image/svg+xml; charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z" fill="black" /></svg>') no-repeat center center;
 	background-size: 60% 60%;
+}*/
+
+[data-recording]{
+	background-color: #F00000AA;
+}
+[data-recording]:hover{
+	background-color: #FF0000FF;
+}
+[data-recording="true"]{
+	background-color: #FF0000FF;
+}
+[data-recording="true"]:hover{
+	background-color: #F00000AA;
 }
 
+[stop]{
+	background-color: #AAAAAAAA;
+}
+[stop]:hover{
+	background-color: #AAAAAAFF;
+}
+[stop="true"]{
+	background-color: #AAAAAAFF;
+}
+[stop="true"]:hover{
+	background-color: #AAAAAAAA;
+}
 
 
 
@@ -381,8 +483,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     padding: 0 5px;
     transform: rotate(270deg);	
 }
-
-
 
 .control-volume-1 {
 	grid-area: vol1;
@@ -410,6 +510,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     transform: rotate(270deg);}
 
 .control-volume-5{grid-area: vol5;
+	margin-top: 30px;
+	width: 8px;
+    height: 250px;
+    padding: 0 5px;
+    transform: rotate(270deg);}
+
+
+.control-volume-MASTER{grid-area: volmaster;
 	margin-top: 30px;
 	width: 8px;
     height: 250px;

@@ -28,8 +28,6 @@ const audioCtx = new AudioContext();
 
 var tuna = new Tuna(audioCtx);
 
-
-
 reverbjs.extend(audioCtx);
 
 // load some sound
@@ -45,48 +43,6 @@ const track2 = audioCtx.createMediaElementSource(audioElement2);
 const track3 = audioCtx.createMediaElementSource(audioElement3);
 const track4 = audioCtx.createMediaElementSource(audioElement4);
 const track5 = audioCtx.createMediaElementSource(audioElement5);
-
-// const playButton = document.querySelector('.tape-controls-play');
-const playButton  = document.getElementById("play1");
-const playButton2 = document.getElementById("play2");
-
-// // play pause audio.  ===== 1 ======
-// playButton.addEventListener('click', function() {
-// 	// check if context is in suspended state (autoplay policy)
-// 	if (audioCtx.state === 'suspended') {
-// 		audioCtx.resume();
-// 	}
-// 	if (this.dataset.playing === 'false') {
-// 		audioElement.play();
-// 		this.dataset.playing = 'true';
-// 	// if track is playing pause it
-// 	} else if (this.dataset.playing === 'true') {
-// 		audioElement.pause();
-// 		this.dataset.playing = 'false';
-// 	}
-// 	let state = this.getAttribute('aria-checked') === "true" ? true : false;
-// 	this.setAttribute( 'aria-checked', state ? "false" : "true" );
-// }, false);
-
-
-// play pause audio.  ===== 2 ======
-// playButton2.addEventListener('click', function() {
-// 	// check if context is in suspended state (autoplay policy)
-// 	if (audioCtx.state === 'suspended') {
-// 		audioCtx.resume();
-// 	}
-// 	if (this.dataset.playing === 'false') {
-// 		audioElement2.play();
-// 		this.dataset.playing = 'true';
-// 	// if track is playing pause it
-// 	} else if (this.dataset.playing === 'true') {
-// 		audioElement2.pause();
-// 		this.dataset.playing = 'false';
-// 	}
-// 	let state = this.getAttribute('aria-checked') === "true" ? true : false;
-// 	this.setAttribute( 'aria-checked', state ? "false" : "true" );
-// }, false);
-
 
 // volume. ===== 1 ======
 const gainNode = audioCtx.createGain();
@@ -248,27 +204,61 @@ filter.frequency.value = 300;
 var recorder = new Recorder(gainNode);
 
 
+// STOP BUTTON 
 const powerButton = document.querySelector('.control-power');
-
-// powerButton.addEventListener('click', function() {
-// 	if (this.dataset.power === 'on') {
-// 		audioCtx.suspend();
-// 		this.dataset.power = 'off';
-// 	} else if (this.dataset.power === 'off') {
-// 		audioCtx.resume();
-// 		this.dataset.power = 'on';
-// 	}
-// 	this.setAttribute( "aria-checked", state ? "false" : "true" );
-
-// }, false);
-
-// Track credit: Outfoxing the Fox by Kevin MacLeod under Creative Commons 
-
-
-
-
-
 powerButton.addEventListener('click', function() {
+
+
+
+		playButton.dataset.playing='false';
+
+		
+		if (recButton.dataset.recording==='true'){
+			// Stop and clear recorder and create WAV download link using audio data blob
+			recorder && recorder.stop();
+	    	createDownloadLink();
+	    	recorder.clear();
+	    	recButton.dataset.recording='false';
+		}
+		
+
+		audioElement.pause();
+		audioElement.currentTime = 0;
+		audioElement2.pause();
+		audioElement2.currentTime = 0;
+		audioElement3.pause();
+		audioElement3.currentTime = 0;
+		audioElement4.pause();
+		audioElement4.currentTime = 0;
+		audioElement5.pause();
+		audioElement5.currentTime = 0;
+    	// audioCtx.close();
+    	// audioCtx = new AudioContext();
+    	// audioCtx.suspend();
+    	// audioCtx.resume();
+	// if (this.dataset.power === 'on') {
+	// 	audioCtx.suspend();
+	// 	this.dataset.power = 'off';
+
+	// 	playButton.dataset.playing='false';
+
+	// 	// Stop and clear recorder and create WAV download link using audio data blob
+	// 	recorder && recorder.stop();
+ //    	createDownloadLink();
+ //    	recorder.clear();
+
+	// } else if (this.dataset.power === 'off') {
+	// 	audioCtx.resume();
+	// 	this.dataset.power = 'on';
+	// }
+	// this.setAttribute( "aria-checked", state ? "false" : "true" );
+	// console.log(audioCtx.state);
+}, false);
+
+
+// PLAY BUTTON 
+const playButton = document.querySelector('.tape-controls-play');
+playButton.addEventListener('click', function() {
 	// check if context is in suspended state (autoplay policy)
 
 
@@ -283,7 +273,7 @@ powerButton.addEventListener('click', function() {
 		audioElement5.play();
 		this.dataset.playing = 'true';
 
-		recorder && recorder.record();
+		
 
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
@@ -294,14 +284,29 @@ powerButton.addEventListener('click', function() {
 		audioElement5.pause();
 		this.dataset.playing = 'false';
 
-		recorder && recorder.stop();
-		// create WAV download link using audio data blob
-    	createDownloadLink();
-    
-    	recorder.clear();
+		
 
 
 	}
 	let state = this.getAttribute('aria-checked') === "true" ? true : false;
 	this.setAttribute( 'aria-checked', state ? "false" : "true" );
 }, false);
+
+const recButton = document.querySelector('.control-rec');
+recButton. addEventListener('click',function(){
+
+	if (this.dataset.recording === 'false') {
+		this.dataset.recording = 'true';
+		recorder && recorder.record();
+	}
+	else if (this.dataset.recording === 'true') {
+		// Stop and clear recorder and create WAV download link using audio data blob
+		recorder && recorder.stop();
+    	createDownloadLink();
+    	recorder.clear();
+    	this.dataset.recording = 'false';
+	}
+
+	
+
+},false);
