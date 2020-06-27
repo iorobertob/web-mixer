@@ -10,44 +10,53 @@
 </head>
 <body>
 
-	<audio  loop src="https://dev.ideas-block.com/mixer/files/percussion.mp3" id="track1" crossorigin="anonymous" ></audio>
-	<audio  loop src="https://dev.ideas-block.com/mixer/files/assortment.mp3" id="track2" crossorigin="anonymous" ></audio>
-	<audio  loop src="https://dev.ideas-block.com/mixer/files/bass.mp3" id="track3" crossorigin="anonymous" ></audio>
-	<audio  loop src="https://dev.ideas-block.com/mixer/files/lead.mp3" id="track4" crossorigin="anonymous" ></audio>
-	<audio  loop src="https://dev.ideas-block.com/mixer/files/harmony.mp3" id="track5" crossorigin="anonymous" ></audio>
+  <audio  loop src="https://dev.ideas-block.com/mixer/files/percussion.mp3" id="track1" crossorigin="anonymous" ></audio>
+  <audio  loop src="https://dev.ideas-block.com/mixer/files/assortment.mp3" id="track2" crossorigin="anonymous" ></audio>
+  <audio  loop src="https://dev.ideas-block.com/mixer/files/bass.mp3" id="track3" crossorigin="anonymous" ></audio>
+  <audio  loop src="https://dev.ideas-block.com/mixer/files/lead.mp3" id="track4" crossorigin="anonymous" ></audio>
+  <audio  loop src="https://dev.ideas-block.com/mixer/files/harmony.mp3" id="track5" crossorigin="anonymous" ></audio>
 
 <div id="left_side">
-	<h1>This is not a Heading</h1>
-	<p>ce n'est pas un paragraph.</p>  
+  <h1>Soundwalk </br> Mixer</h1>
+  <p>SCENE 1.</p>  
+
+   <!-- ABOUT TEXT, TO BE ADDED LATER VIA JS SCRIPT -->
+          <div >
+            <p  id="content_text" 
+                class="row title" 
+                style=' color:white; 
+                        font-family:"lato";
+                        '
+                ></p>
+          </div>
+
 </div>
 
 <div id="right_side">
-	
-	<h2>Recordings</h2>
-  	<ul id="recordingslist"></ul>
+  
+  <h2>Recordings</h2>
+    <ul id="recordingslist"></ul>
 </div>
-
-
 
 <div id="boombox">
 
-	<p></p>
+  <p></p>
 
-	<a href="scene_1.html" class="btn btn-primary" style="grid-area: scene1;">Scene 1</a>
-	<a href="scene_2.html" class="btn btn-primary" style="grid-area: scene2;">Scene 1</a>
-	<a href="scene_3.html" class="btn btn-primary" style="grid-area: scene3;">Scene 3</a>
-	<a href="scene_4.html" class="btn btn-primary" style="grid-area: scene4;">Scene 4</a>
-	<a href="scene_5.html" class="btn btn-primary" style="grid-area: scene5;">Scene 5</a>
+  <a href="scene_1.html" class="btn btn-primary" style="grid-area: scene1;">Scene 1</a>
+  <a href="scene_2.html" class="btn btn-primary" style="grid-area: scene2;">Scene 1</a>
+  <a href="scene_3.html" class="btn btn-primary" style="grid-area: scene3;">Scene 3</a>
+  <a href="scene_4.html" class="btn btn-primary" style="grid-area: scene4;">Scene 4</a>
+  <a href="scene_5.html" class="btn btn-primary" style="grid-area: scene5;">Scene 5</a>
 
-	<p></p>
+  <p></p>
 
-	<div class="boombox-body">
-		<section class="master-controls">
+  <div class="boombox-body">
+    <section class="master-controls">
 
 <!-- AUX 1.1  -->
 <div class="adjustment aux1 adjustment-aux1">
   <input id="knob_aux1_1" data-array-index="0"class="aux" type="range" min="0" max="100"  value="0" oninput="this.parentElement.style.setProperty('--knob-position', this.value)">
-  <div class="knob"></div>	
+  <div class="knob"></div>  
   <div class="bg"></div>
 </div>
 
@@ -291,88 +300,88 @@
 
 
 
-			<!-- VOL 1 -->
-			<input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
-			<datalist id="gain-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_1">Miestas <br> City </label>
-			
+      <!-- VOL 1 -->
+      <input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_1">Miestas <br> City </label>
+      
 
-			<!-- VOL2 -->
-			<input type="range" id="volume2" class="control-volume-2" min="0" max="1" value="0" list="pan-vals" step="0.01" data-action="volume" orient="vertical";/>
-			<datalist id="pan-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_2">Gamta <br>Nature</label>
-
-
-			<!-- VOL 3 -->
-			<input type="range" id="volume3" class="control-volume-3" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
-			<datalist id="gain-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_3">Žmonės <br>People</label>
+      <!-- VOL2 -->
+      <input type="range" id="volume2" class="control-volume-2" min="0" max="1" value="0" list="pan-vals" step="0.01" data-action="volume" orient="vertical";/>
+      <datalist id="pan-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_2">Gamta <br>Nature</label>
 
 
-			<!-- VOL 4 -->
-			<input type="range" id="volume4" class="control-volume-4" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
-			<datalist id="gain-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_4">Tyla <br>Silence</label>
+      <!-- VOL 3 -->
+      <input type="range" id="volume3" class="control-volume-3" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_3">Žmonės <br>People</label>
 
 
-			<!-- VOL 5 -->
-			<input type="range" id="volume5" class="control-volume-5" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
-			<datalist id="gain-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_5">Triukšmas <br>Noise</label>
-
-			<!-- VOL MASTER-->
-			<input type="range" id="volumeMASTER" class="control-volume-MASTER" min="0" max="1.5" value="1" list="gain-vals" step="0.01" data-action="volume" />
-			<datalist id="gain-vals">
-				<option value="0" label="min">
-				<option value="2" label="max">
-			</datalist>
-			<label for="vol_label_MASTER">MASTER</label>
-
-			<label for="vol_label_aux1">Reverb</label>
-			<label for="vol_label_aux2">Delay</label>
-			<label for="vol_label_aux3">Chorus</label>
-			<label for="vol_label_aux4">Overdrive</label>
-			<label for="vol_label_aux5">LP Filter Freq</label>
-			<label for="vol_label_aux6">LP Filter Gain</label>
-
-			
-
-			<div class="playback-controls">
-
-				<button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
-				</button>
-
-				<button stop="false" class="control-power" role="switch" aria-checked="false" data-power="on">
-					<span>On/Off</span>
-				</button>
+      <!-- VOL 4 -->
+      <input type="range" id="volume4" class="control-volume-4" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_4">Tyla <br>Silence</label>
 
 
-				<button data-recording="false" class="control-rec" role="switch" aria-checked="false" data-power="on">
-				</button>
+      <!-- VOL 5 -->
+      <input type="range" id="volume5" class="control-volume-5" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_5">Triukšmas <br>Noise</label>
 
-			</div>
+      <!-- VOL MASTER-->
+      <input type="range" id="volumeMASTER" class="control-volume-MASTER" min="0" max="1.5" value="1" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="2" label="max">
+      </datalist>
+      <label for="vol_label_MASTER">MASTER</label>
 
-		</section>
+      <label for="vol_label_aux1">Reverb</label>
+      <label for="vol_label_aux2">Delay</label>
+      <label for="vol_label_aux3">Chorus</label>
+      <label for="vol_label_aux4">Overdrive</label>
+      <label for="vol_label_aux5">LP Filter Freq</label>
+      <label for="vol_label_aux6">LP Filter Gain</label>
+
+      
+
+      <div class="playback-controls">
+
+        <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
+        </button>
+
+        <button stop="false" class="control-power" role="switch" aria-checked="false" data-power="on">
+          <span>On/Off</span>
+        </button>
 
 
-		
-	</div><!-- boombox-body -->
-	
+        <button data-recording="false" class="control-rec" role="switch" aria-checked="false" data-power="on">
+        </button>
+
+      </div>
+
+    </section>
+
+
+    
+  </div><!-- boombox-body -->
+  
 </div>
 
 
@@ -387,5 +396,6 @@
 <script src="audio_script.js"></script>
 <!-- <script src="knobs.js"></script> -->
 <script src="knob2.js"></script>
+<script src="add_text.js"></script>
 
 </html>

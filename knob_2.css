@@ -53,6 +53,10 @@
     background: hsla(200, 60%, 50%, 1);  /* Front color */
 }
 
+.adjustment_freq{
+  filter: saturate(calc(var(--knob-position) * 0.001%));
+}
+
 
 .adjustment::after {
   position: absolute;
@@ -84,6 +88,10 @@ input.aux[type="range"],
   transform: rotate(calc(var(--knob-rotation) - (var(--knob-range) / 2)));
   background: #7733ff;
   transition: 0.07s;
+}
+
+.knob_freq{
+  --knob-rotation: calc(var(--knob-position) / 12000 * var(--knob-range));
 }
 
 /*dial line*/

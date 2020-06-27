@@ -23,16 +23,81 @@
 }
 * {box-sizing: border-box;}
 body {
+	display: grid;
+	grid-template-columns: 20% 50% 25%;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: 
+	"body1 body2 body3"
+	"body2_1 body2_2 body2_3"
+	"body3_1 body3_2 body3_3";
 	background-color: var(--white);
 	padding: 4vmax;
 	font-family: system-ui; color: var(--black);
 }
 
-#boombox {
-	width: 82vw; max-width: 800px; margin: 0px auto;
+@media screen and (max-width: 570px) {
+	body {
+		max-width: 600px;
+	}
+}
+
+
+
+
+
+.scenes_links{
+	display: grid;
+	grid-template-columns: repeat(5, auto);
+	grid-template-areas: 
+	"scene1 scene2 scene3 scene4 scene5";
+}
+
+
+/*a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    border-color: black;
+
+    text-decoration: none;
+    color: initial;
+}*/
+.btn{
+	margin-top: 10px;
+
+}
+
+
+#left_side {
+	grid-area:body1;
+}
+
+#right_side {
+	grid-area:body3;
 }
 @media screen and (max-width: 570px) {
-	#boombox {max-width: 600px;}
+	#left_side {
+		grid-area: body2
+	}
+	#right_side{
+		grid-area:body3_1;
+	}
+}
+
+
+
+
+#boombox {
+	grid-area: body2;
+	width: 82vw; 
+	max-width: 800px; 
+	margin: 0px auto;
+}
+@media screen and (max-width: 570px) {
+	#boombox {
+		grid-area:body2_1;
+		max-width: 600px;
+	}
 }
 
 .boombox-body {
@@ -68,7 +133,7 @@ body {
 
 .master-controls {
 	display: grid;
-	grid-template-rows: repeat(5, auto) 300px auto;
+	grid-template-rows: repeat(6, auto) 300px auto;
 	grid-template-columns: repeat(6, 16%) 12% auto;
 	/*name our grid areas so they are more manipulative later*/
 	grid-template-areas:
@@ -77,6 +142,7 @@ body {
 		"aux3_1 aux3_2 aux3_3 aux3_4 aux3_5 auxmaster3 aux3_power"
 		"aux4_1 aux4_2 aux4_3 aux4_4 aux4_5 auxmaster4 aux4_power"
 		"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
+		"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
 		"vol1 vol2 vol3 vol4 vol5 volmaster power"
 		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	justify-items: center; align-items: center;
@@ -95,6 +161,7 @@ body {
 			"aux3_1 aux3_2 aux3_3 aux3_4 aux3_5 auxmaster3 aux3_power"
 			"aux4_1 aux4_2 aux4_3 aux4_4 aux4_5 auxmaster4 aux4_power"
 			"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
+		"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
 			"vol1 vol2 vol3 vol4 vol5 volmaster power"
 			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	}
@@ -250,7 +317,36 @@ body {
 	margin-left: 0px;
 	margin-bottom: 20px;
 }
-
+.aux26{
+	grid-area: aux6_1; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux27{
+	grid-area: aux6_2; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux28{
+	grid-area: aux6_3; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux29{
+	grid-area: aux6_4; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.aux30{
+	grid-area: aux6_5; align-self: center;
+	width: 60px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
 
 
 
@@ -272,6 +368,7 @@ label[for="vol_label_aux2"] {grid-area: auxmaster2; margin-top: 15px;}
 label[for="vol_label_aux3"] {grid-area: auxmaster3; margin-top: 15px;}
 label[for="vol_label_aux4"] {grid-area: auxmaster4; margin-top: 15px;}
 label[for="vol_label_aux5"] {grid-area: auxmaster5; margin-top: 15px;}
+label[for="vol_label_aux6"] {grid-area: auxmaster6; margin-top: 15px;}
 label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 /*.control-panner {grid-area: panin;}
 .control-panner::before {content: 'left';}

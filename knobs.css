@@ -3,7 +3,7 @@ $easeOutSine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
 $easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
 $easeOutCirc: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 
-// general
+/*// general*/
 
 * {
   box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
   opacity: 0;
 }
 
-// FL studio knobs - demo styles
+/*// FL studio knobs - demo styles*/
 
 $envelope-knob-size: 80px;
 $tension-knob-size: 60px;

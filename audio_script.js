@@ -5,6 +5,7 @@ function createDownloadLink() {
       var url = URL.createObjectURL(blob);
       var li = document.createElement('li');
       var au = document.createElement('audio');
+      var br = document.createElement('br');
       var hf = document.createElement('a');
       
       au.controls = true;
@@ -13,14 +14,13 @@ function createDownloadLink() {
       hf.download = new Date().toISOString() + '.wav';
       hf.innerHTML = hf.download;
       li.appendChild(au);
+      li.appendChild(br);
       li.appendChild(hf);
       recordingslist.appendChild(li);
     });
 }
 
-
 // instigate our audio context
-
 // for cross browser
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 
@@ -88,51 +88,96 @@ volumeControl5.addEventListener('input', function() {
 }, false);
 gainNode5.gain.value = 0;
 
-
-// gain aux 1.1 
-const gainNodeAux1_1 = audioCtx.createGain();
-const knob_Aux1_1 = document.getElementById('knob_aux1_1');
-knob_Aux1_1.addEventListener('input', function() {
-	gainNodeAux1_1.gain.value = this.value/200;
-	// gainNodeAux1_1.gain.value = knob_Aux1_1.getAttribute("--knob-position'");
+// volume. ===== MASTER ======
+const gainNodeMaster = audioCtx.createGain();
+// const volumeControl2 = document.querySelector('[data-action="panner"]');
+const volumeControlMaster = document.getElementById('volumeMASTER');
+volumeControlMaster.addEventListener('input', function() {
+	gainNodeMaster.gain.value = this.value/1.1;
 }, false);
-gainNodeAux1_1.gain.value = 0;
+gainNodeMaster.gain.value = 1;
 
-// gain aux 1.2
-const gainNodeAux1_2 = audioCtx.createGain();
-const knob_Aux1_2 = document.getElementById('knob_aux1_2');
-knob_Aux1_2.addEventListener('input', function() {
-	gainNodeAux1_2.gain.value = this.value/200;
-	// gainNodeAux1_1.gain.value = knob_Aux1_1.getAttribute("--knob-position'");
-}, false);
-gainNodeAux1_2.gain.value = 0;
 
-// gain aux 1.3
-const gainNodeAux1_3 = audioCtx.createGain();
-const knob_Aux1_3 = document.getElementById('knob_aux1_3');
-knob_Aux1_3.addEventListener('input', function() {
-	gainNodeAux1_3.gain.value = this.value/200;
-	// gainNodeAux1_1.gain.value = knob_Aux1_1.getAttribute("--knob-position'");
-}, false);
-gainNodeAux1_3.gain.value = 0;
+// Create all the knobs' gain nodes. 
+var knob_id;
+var gains_aux_array = [];
+var knobs_aux_array = [];
+for (i=1; i <= 6; i++){
 
-// gain aux 1.2
-const gainNodeAux1_4 = audioCtx.createGain();
-const knob_Aux1_4 = document.getElementById('knob_aux1_4');
-knob_Aux1_4.addEventListener('input', function() {
-	gainNodeAux1_4.gain.value = this.value/200;
-	// gainNodeAux1_1.gain.value = knob_Aux1_1.getAttribute("--knob-position'");
-}, false);
-gainNodeAux1_4.gain.value = 0;
+	for(j=1; j <= 5; j++){
 
-// gain aux 1.2
-const gainNodeAux1_5 = audioCtx.createGain();
-const knob_Aux1_5 = document.getElementById('knob_aux1_5');
-knob_Aux1_5.addEventListener('input', function() {
-	gainNodeAux1_5.gain.value = this.value/200;
-	// gainNodeAux1_1.gain.value = knob_Aux1_1.getAttribute("--knob-position'");
-}, false);
-gainNodeAux1_5.gain.value = 0;
+		gains_aux_array.push(audioCtx.createGain());
+
+		knob_id = "knob_aux" + i + "_" + j;
+		knobs_aux_array.push(document.getElementById(knob_id));
+		// knobs_aux_array[((i-1)*5)+(j-1)].addEventListener('input', function() {
+		// 	gains_aux_array[((i-1)*5)+(j-1)].gain.value = this.value/200;
+		// 	console.log(this.value);
+		// }, false);
+		// gains_aux_array[gains_aux_array.length-1].gain.value = 0;
+	}
+}
+
+for(i=0;i<knobs_aux_array.length;i++){
+	var index = i;
+	knobs_aux_array[i].addEventListener('input', function() {
+			var index = this.getAttribute("data-array-index");
+			if((index >19)&&(index < 25)){
+				// gains_aux_array[index].gain.value = this.value/200;
+				var new_index = index - 20;
+				filter_array[new_index].frequency.value = this.value;
+			}
+			else{
+				gains_aux_array[index].gain.value = this.value/200;
+			}
+		}, false);
+		gains_aux_array[index].gain.value = 0;
+}
+
+// knobs_aux_array[4].addEventListener('input', function() {
+// 		console.log(this.value);
+// 			gains_aux_array[4].gain.value = this.value/200;
+// 		}, false);
+
+// // gain aux 1.1 
+// const gainNodeAux1_1 = audioCtx.createGain();
+// const knob_Aux1_1 = document.getElementById('knob_aux1_1');
+// knob_Aux1_1.addEventListener('input', function() {
+// 	gainNodeAux1_1.gain.value = this.value/200;
+// }, false);
+// gainNodeAux1_1.gain.value = 0;
+
+// // gain aux 1.2
+// const gainNodeAux1_2 = audioCtx.createGain();
+// const knob_Aux1_2 = document.getElementById('knob_aux1_2');
+// knob_Aux1_2.addEventListener('input', function() {
+// 	gainNodeAux1_2.gain.value = this.value/200;
+// }, false);
+// gainNodeAux1_2.gain.value = 0;
+
+// // gain aux 1.3
+// const gainNodeAux1_3 = audioCtx.createGain();
+// const knob_Aux1_3 = document.getElementById('knob_aux1_3');
+// knob_Aux1_3.addEventListener('input', function() {
+// 	gainNodeAux1_3.gain.value = this.value/200;
+// }, false);
+// gainNodeAux1_3.gain.value = 0;
+
+// // gain aux 1.2
+// const gainNodeAux1_4 = audioCtx.createGain();
+// const knob_Aux1_4 = document.getElementById('knob_aux1_4');
+// knob_Aux1_4.addEventListener('input', function() {
+// 	gainNodeAux1_4.gain.value = this.value/200;
+// }, false);
+// gainNodeAux1_4.gain.value = 0;
+
+// // gain aux 1.2
+// const gainNodeAux1_5 = audioCtx.createGain();
+// const knob_Aux1_5 = document.getElementById('knob_aux1_5');
+// knob_Aux1_5.addEventListener('input', function() {
+// 	gainNodeAux1_5.gain.value = this.value/200;
+// }, false);
+// gainNodeAux1_5.gain.value = 0;
 
 
 
@@ -144,7 +189,8 @@ var filter = audioCtx.createBiquadFilter();
 // 2) Load the impulse response; upon load, connect it to the audio output.
 var reverbUrl = "https://dev.ideas-block.com/mixer/files/AbernyteGrainSilo_MP3.mp3";
 var reverbNode = audioCtx.createReverbFromUrl(reverbUrl, function() {
-  reverbNode.connect(audioCtx.destination);
+  // reverbNode.connect(audioCtx.destination);
+  reverbNode.connect(gainNodeMaster);
 });
 
 
@@ -167,6 +213,7 @@ var delayNode = new tuna.Delay({
     bypass: 0
 });
 
+// OVERDRIVE NODE 
 var overdriveNode = new tuna.Overdrive({
     outputGain: -42,           //-42 to 0 in dB
     drive: 0.7,              //0 to 1
@@ -175,43 +222,121 @@ var overdriveNode = new tuna.Overdrive({
     bypass: 0
 });
 
+
+// FILTER NODEs
+var filter_array = [];
+for(i = 0; i < 5; i++){
+	filter_array.push(new tuna.Filter({
+    frequency: 440, //20 to 22050
+    Q: 1, //0.001 to 100
+    gain: 0, //-40 to 40 (in decibels)
+    filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+    bypass: 0
+}));
+
+}
+// var filter1 = new tuna.Filter({
+//     frequency: 440, //20 to 22050
+//     Q: 1, //0.001 to 100
+//     gain: 0, //-40 to 40 (in decibels)
+//     filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+//     bypass: 0
+// });
+// var filter2 = new tuna.Filter({
+//     frequency: 440, //20 to 22050
+//     Q: 1, //0.001 to 100
+//     gain: 0, //-40 to 40 (in decibels)
+//     filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+//     bypass: 0
+// });
+// var filter3 = new tuna.Filter({
+//     frequency: 440, //20 to 22050
+//     Q: 1, //0.001 to 100
+//     gain: 0, //-40 to 40 (in decibels)
+//     filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+//     bypass: 0
+// });
+// var filter4 = new tuna.Filter({
+//     frequency: 440, //20 to 22050
+//     Q: 1, //0.001 to 100
+//     gain: 0, //-40 to 40 (in decibels)
+//     filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+//     bypass: 0
+// });
+// var filter5 = new tuna.Filter({
+//     frequency: 440, //20 to 22050
+//     Q: 1, //0.001 to 100
+//     gain: 0, //-40 to 40 (in decibels)
+//     filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+//     bypass: 0
+// });
+
 // connect our graph
-track.connect(gainNode).connect(audioCtx.destination); // 1
-track2.connect(gainNode2).connect(audioCtx.destination); // 2
-track3.connect(gainNode3).connect(audioCtx.destination); // 3
-track4.connect(gainNode4).connect(audioCtx.destination); // 4
-track5.connect(gainNode5).connect(audioCtx.destination); // 5
+track.connect(gainNode).connect(gainNodeMaster); // 1
+track2.connect(gainNode2).connect(gainNodeMaster); // 2
+track3.connect(gainNode3).connect(gainNodeMaster); // 3
+track4.connect(gainNode4).connect(gainNodeMaster); // 4
+track5.connect(gainNode5).connect(gainNodeMaster); // 5
 
 // track.connect(filter).connect(audioCtx.destination); //1
-track.connect(gainNodeAux1_1).connect(reverbNode); //1
 // track.connect(gainNodeAux1_1).connect(delayNode).connect(audioCtx.destination);; //1
 // track.connect(gainNodeAux1_1).connect(chorusNode).connect(audioCtx.destination);; //1
 // track.connect(gainNodeAux1_1).connect(overdriveNode).connect(audioCtx.destination);; //1
-track2.connect(gainNodeAux1_2).connect(reverbNode); //2
-track3.connect(gainNodeAux1_3).connect(reverbNode); //3
-track4.connect(gainNodeAux1_4).connect(reverbNode); //4
-track5.connect(gainNodeAux1_5).connect(reverbNode); //5
+// track.connect(gainNodeAux1_1).connect(reverbNode); //1
+// track2.connect(gainNodeAux1_2).connect(reverbNode); //2
+// track3.connect(gainNodeAux1_3).connect(reverbNode); //3
+// track4.connect(gainNodeAux1_4).connect(reverbNode); //4
+// track5.connect(gainNodeAux1_5).connect(reverbNode); //5
+// REVERB PATCHING
+track.connect(gains_aux_array[0]).connect(reverbNode); //1
+track2.connect(gains_aux_array[1]).connect(reverbNode); //2
+track3.connect(gains_aux_array[2]).connect(reverbNode); //3
+track4.connect(gains_aux_array[3]).connect(reverbNode); //4
+track5.connect(gains_aux_array[4]).connect(reverbNode); //5
+
+// DELAY PATCHING
+track.connect(gains_aux_array[5]).connect(delayNode).connect(gainNodeMaster); //1
+track2.connect(gains_aux_array[6]).connect(delayNode).connect(gainNodeMaster); //2
+track3.connect(gains_aux_array[7]).connect(delayNode).connect(gainNodeMaster);//3
+track4.connect(gains_aux_array[8]).connect(delayNode).connect(gainNodeMaster);//4
+track5.connect(gains_aux_array[9]).connect(delayNode).connect(gainNodeMaster); //5
+
+// CHORUS PATCHING
+track.connect(gains_aux_array[10]).connect(chorusNode).connect(gainNodeMaster); //1
+track2.connect(gains_aux_array[11]).connect(chorusNode).connect(gainNodeMaster); //2
+track3.connect(gains_aux_array[12]).connect(chorusNode).connect(gainNodeMaster); //3
+track4.connect(gains_aux_array[13]).connect(chorusNode).connect(gainNodeMaster); //4
+track5.connect(gains_aux_array[14]).connect(chorusNode).connect(gainNodeMaster); //5
+
+// OVERDRIVE PATCHING
+track.connect(gains_aux_array[15]).connect(overdriveNode).connect(gainNodeMaster); //1
+track2.connect(gains_aux_array[16]).connect(overdriveNode).connect(gainNodeMaster); //2
+track3.connect(gains_aux_array[17]).connect(overdriveNode).connect(gainNodeMaster); //3
+track4.connect(gains_aux_array[18]).connect(overdriveNode).connect(gainNodeMaster); //4
+track5.connect(gains_aux_array[19]).connect(overdriveNode).connect(gainNodeMaster); //5
+
+// FILTER PATCHING
+track.connect(gains_aux_array[25]).connect(filter_array[0]).connect(gainNodeMaster); //1
+track2.connect(gains_aux_array[26]).connect(filter_array[1]).connect(gainNodeMaster); //2
+track3.connect(gains_aux_array[27]).connect(filter_array[2]).connect(gainNodeMaster); //3
+track4.connect(gains_aux_array[28]).connect(filter_array[3]).connect(gainNodeMaster); //4
+track5.connect(gains_aux_array[29]).connect(filter_array[4]).connect(gainNodeMaster); //5
+
+
+gainNodeMaster.connect(audioCtx.destination);
 
 filter.type = 'lowpass';
 filter.frequency.value = 300;
 
 
-
-// var record_stream = audioCtx.createMediaStreamDestination(audioCtx.destination).stream;
-
-// var input = audioCtx.createMediaStreamSource(record_stream);
-
-var recorder = new Recorder(gainNode);
+var recorder = new Recorder(gainNodeMaster);
 
 
 // STOP BUTTON 
 const powerButton = document.querySelector('.control-power');
 powerButton.addEventListener('click', function() {
 
-
-
 		playButton.dataset.playing='false';
-
 		
 		if (recButton.dataset.recording==='true'){
 			// Stop and clear recorder and create WAV download link using audio data blob
@@ -221,7 +346,6 @@ powerButton.addEventListener('click', function() {
 	    	recButton.dataset.recording='false';
 		}
 		
-
 		audioElement.pause();
 		audioElement.currentTime = 0;
 		audioElement2.pause();
@@ -232,27 +356,6 @@ powerButton.addEventListener('click', function() {
 		audioElement4.currentTime = 0;
 		audioElement5.pause();
 		audioElement5.currentTime = 0;
-    	// audioCtx.close();
-    	// audioCtx = new AudioContext();
-    	// audioCtx.suspend();
-    	// audioCtx.resume();
-	// if (this.dataset.power === 'on') {
-	// 	audioCtx.suspend();
-	// 	this.dataset.power = 'off';
-
-	// 	playButton.dataset.playing='false';
-
-	// 	// Stop and clear recorder and create WAV download link using audio data blob
-	// 	recorder && recorder.stop();
- //    	createDownloadLink();
- //    	recorder.clear();
-
-	// } else if (this.dataset.power === 'off') {
-	// 	audioCtx.resume();
-	// 	this.dataset.power = 'on';
-	// }
-	// this.setAttribute( "aria-checked", state ? "false" : "true" );
-	// console.log(audioCtx.state);
 }, false);
 
 
@@ -273,8 +376,6 @@ playButton.addEventListener('click', function() {
 		audioElement5.play();
 		this.dataset.playing = 'true';
 
-		
-
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
 		audioElement.pause();
@@ -283,8 +384,6 @@ playButton.addEventListener('click', function() {
 		audioElement4.pause();
 		audioElement5.pause();
 		this.dataset.playing = 'false';
-
-		
 
 
 	}
