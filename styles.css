@@ -40,7 +40,9 @@ body {
 	"body3_1 body3_2 body3_3";
 	background-color: var(--white);
 	padding: 4vmax;
-	font-family: system-ui; color: var(--black);
+	font-family: "lato"; 
+	/*font-family: system-ui; */
+	color: var(--black);
 }
 
 @media screen and (max-width: 570px) {
