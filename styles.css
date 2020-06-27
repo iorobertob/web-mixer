@@ -18,8 +18,6 @@
 
 	--border: 1vmin solid var(--black);
 	--borderRad: 2px;
-
-
 }
 
 @font-face {
@@ -31,13 +29,13 @@
 
 * {box-sizing: border-box;}
 body {
-	display: grid;
+	/*display: grid;
 	grid-template-columns: 20% 50% 25%;
 	grid-template-rows: repeat(3, auto);
 	grid-template-areas: 
 	"body1 body2 body3"
 	"body2_1 body2_2 body2_3"
-	"body3_1 body3_2 body3_3";
+	"body3_1 body3_2 body3_3";*/
 	background-color: var(--white);
 	padding: 4vmax;
 	font-family: "lato"; 
@@ -52,7 +50,15 @@ body {
 }
 
 
-
+#all_grid{
+	display: grid;
+	grid-template-columns: 20% 50% 25%;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: 
+	"body1 body2 body3"
+	"body2_1 body2_2 body2_3"
+	"body3_1 body3_2 body3_3";
+}
 
 
 .scenes_links{
@@ -87,10 +93,10 @@ body {
 }
 @media screen and (max-width: 570px) {
 	#left_side {
-		grid-area: body2
+		grid-area: body3_1
 	}
 	#right_side{
-		grid-area:body3_1;
+		grid-area:body2_1;
 	}
 }
 
@@ -101,11 +107,11 @@ body {
 	grid-area: body2;
 	width: 82vw; 
 	max-width: 800px; 
-	margin: 0px auto;
+	/*margin: 0px auto;*/
 }
 @media screen and (max-width: 570px) {
 	#boombox {
-		grid-area:body2_1;
+		grid-area:body1;
 		max-width: 600px;
 	}
 }
@@ -114,9 +120,9 @@ body {
 	/*gradient with two circles for speakers*/
 /* 	padding-top: 3vh; */
 	background: var(--boxMain) repeat-x bottom left;
-	background-size: 33.3% 70%;
+	/*background-size: 33.3% 70%;*/
 	border: 6px solid var(--black);
-	border-radius: var(--borderRad);
+	/*border-radius: var(--borderRad);*/
 }
 /*small screen with one circle*/
 @media screen and (max-width: 570px) {
@@ -144,7 +150,7 @@ body {
 .master-controls {
 	display: grid;
 	grid-template-rows: repeat(6, auto) 300px auto;
-	grid-template-columns: repeat(6, 16%) 12% auto;
+	grid-template-columns: repeat(6, 15%) 12%;
 	/*name our grid areas so they are more manipulative later*/
 	grid-template-areas:
 		"auxone auxtwo auxthree auxfour auxfive auxmaster auxpower"
@@ -156,26 +162,72 @@ body {
 		"vol1 vol2 vol3 vol4 vol5 volmaster power"
 		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	justify-items: center; align-items: center;
-	padding: 2vmax;
+	padding: 1vmax;
 	background-color: var(--boxSecond);
 	border-bottom: var(--border);
 }
 /* change control grid areas for smaller boom box */
 @media screen and (max-width: 570px) {
 	.master-controls {
-		grid-gap: 10px;
-		grid-template-columns: 16% 1fr 12%;
-		grid-template-areas:
+	grid-gap: 10px;
+	grid-template-rows: repeat(6, auto) 180px auto;
+	grid-template-columns: repeat(6, 15%) 12%;
+		/*grid-template-columns: 16% 1fr 12%;*/
+	grid-template-areas:
 			"auxone auxtwo auxthree auxfour auxfive auxmaster auxpower"
 			"aux2_1 aux2_2 aux2_3 aux2_4 aux2_5 auxmaster2 aux2_power"
 			"aux3_1 aux3_2 aux3_3 aux3_4 aux3_5 auxmaster3 aux3_power"
 			"aux4_1 aux4_2 aux4_3 aux4_4 aux4_5 auxmaster4 aux4_power"
 			"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
-		"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
+			"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
 			"vol1 vol2 vol3 vol4 vol5 volmaster power"
 			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	}
 }
+
+
+.playback-controls{
+	grid-area:power; 
+	align-self: center;
+  	display: grid;	
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+	padding: 5px;
+}
+
+@media screen and (max-width: 570px){
+	.playback-controls{
+		margin-left: 32px;
+	}
+}
+
+.control-power {
+	/*grid-area: power; align-self: center;*/
+	width: 80px; height: 80px;
+	border: 3px solid var(--black); border-radius: 5px;
+	cursor: pointer;
+	/*background-color: darkgray;*/
+	background-color: #AAAAAAAA;
+
+	/*grid-column: 2 / 6;*/
+	/*grid-row: 1 / 2;*/
+}
+.control-power span {display: none;}
+
+
+.control-rec {
+	/*grid-area: vollabpower; align-self: center;*/
+	width: 80px; height: 80px;
+	border: 3px solid var(--black); border-radius: 80px;
+	cursor: pointer;
+	margin-top: 10px;
+	/*grid-column: 2 / 6;*/
+	/*grid-row: 3 / 3;*/
+	background-color: #F00000AA;
+}
+
+
+
 
 .aux1{
 	grid-area: auxone; align-self: center;
@@ -386,42 +438,10 @@ label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 /*label[for="panner"] {grid-area: vollab2; margin-top: 15px;}*/
 @media screen and (max-width: 570px) {
 	label[for="volume"], label[for="panner"] {margin-top: 0px;}
-	.control-volume {margin-bottom: 20px;}
+	/*.control-volume {margin-bottom: 20px;}*/
 }
 
 
-.playback-controls{
-	grid-area:power; align-self: center;
-  	display: grid;	
-	grid-template-columns: subgrid;
-	grid-template-rows: subgrid;
-	padding: 5px;
-}
-
-.control-power {
-	/*grid-area: power; align-self: center;*/
-	width: 80px; height: 80px;
-	border: 3px solid var(--black); border-radius: 5px;
-	cursor: pointer;
-	/*background-color: darkgray;*/
-	background-color: #AAAAAAAA;
-
-	/*grid-column: 2 / 6;*/
-	/*grid-row: 1 / 2;*/
-}
-.control-power span {display: none;}
-
-
-.control-rec {
-	/*grid-area: vollabpower; align-self: center;*/
-	width: 80px; height: 80px;
-	border: 3px solid var(--black); border-radius: 80px;
-	cursor: pointer;
-	margin-top: 10px;
-	/*grid-column: 2 / 6;*/
-	/*grid-row: 3 / 3;*/
-	background-color: #F00000AA;
-}
 
 
 
@@ -591,42 +611,49 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     transform: rotate(270deg);	
 }
 
-.control-volume-1 {
+/*.control-volume-1 {
 	grid-area: vol1;
-	margin-top: 30px;}
+	margin-top: 30px;
+    padding: 0 5px;
+}*/
 
-.control-volume-2{grid-area: vol2;
+.control-volume-2{
+	grid-area: vol2;
 	margin-top: 30px;
 	width: 8px;
-    height: 250px;
+    height: 	50px;
     padding: 0 5px;
     transform: rotate(270deg);}
 
-.control-volume-3{grid-area: vol3;
+.control-volume-3{
+	grid-area: vol3;
 	margin-top: 30px;
 	width: 8px;
-    height: 250px;
+    height: 50px;
     padding: 0 5px;
     transform: rotate(270deg);}
 
-.control-volume-4{grid-area: vol4;
+.control-volume-4{
+	grid-area: vol4;
 	margin-top: 30px;
 	width: 8px;
-    height: 250px;
+    height: 50px;
     padding: 0 5px;
     transform: rotate(270deg);}
 
-.control-volume-5{grid-area: vol5;
+.control-volume-5{
+	grid-area: vol5;
 	margin-top: 30px;
 	width: 8px;
-    height: 250px;
+    height: 50px;
     padding: 0 5px;
     transform: rotate(270deg);}
 
 
-.control-volume-MASTER{grid-area: volmaster;
+.control-volume-MASTER{
+	grid-area: volmaster;
 	margin-top: 30px;
 	width: 8px;
-    height: 250px;
+    height: 50px;
     padding: 0 5px;
     transform: rotate(270deg);}
