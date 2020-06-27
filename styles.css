@@ -43,7 +43,7 @@ body {
 	color: var(--black);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
 	body {
 		max-width: 600px;
 	}
@@ -91,7 +91,7 @@ body {
 #right_side {
 	grid-area:body3;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
 	#left_side {
 		grid-area: body3_1;
 		width: 82vw; 
@@ -113,7 +113,7 @@ body {
 	max-width: 800px; 
 	margin: 0px auto;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
 	#boombox {
 		grid-area:body1;
 		max-width: 600px;
@@ -129,7 +129,7 @@ body {
 	border-radius: var(--borderRad);
 }
 /*small screen with one circle*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
 	.boombox-body {
 		background-repeat: no-repeat;
 		background-position: center top;
@@ -171,7 +171,7 @@ body {
 	border-bottom: var(--border);
 }
 /* change control grid areas for smaller boom box */
-@media screen and (max-width: 8070px) {
+@media screen and (max-width: 400px) {
 	.master-controls {
 	grid-gap: 12px;
 	grid-template-rows: repeat(6, auto) 180px auto;
@@ -198,7 +198,7 @@ body {
 	padding: 5px;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 400px){
 	.playback-controls{
 		margin-left: 32px;
 	}
@@ -436,7 +436,7 @@ label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 .control-panner::before {content: 'left';}
 .control-panner::after {content: 'right';}*/
 /*label[for="panner"] {grid-area: vollab2; margin-top: 15px;}*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
 	label[for="volume"], label[for="panner"] {margin-top: 0px;}
 	/*.control-volume {margin-bottom: 20px;}*/
 }
@@ -478,12 +478,12 @@ input[type=range] {
 						height: 50px;
 	}
 }
-@media(max-width: 680px) {
+@media(max-width: 400px) {
 	input[type=range] {
 		width: 180px;
 	}
 }
-@media(max-width: 380px) {
+@media(max-width: 400px) {
 	input[type=range] {
 		width: 130px;
 	}
