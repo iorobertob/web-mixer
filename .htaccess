@@ -1,1 +1,5 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin '*'
+</IfModule>
+
 DirectoryIndex scene_1.html
