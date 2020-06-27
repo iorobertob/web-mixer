@@ -9,7 +9,7 @@
 
       httpRequest.onreadystatechange = setContents;
       //Open then send the request to your page
-      httpRequest.open('GET', "files/content_text.txt");
+      httpRequest.open('GET', "https://dev.ideas-block.com/mixer/files/content_text.txt");
       httpRequest.send();
        
 
@@ -23,5 +23,13 @@
           }
         }
       }
+
+
+
+
+
+
+
+
 
     })(); 

@@ -93,21 +93,25 @@ body {
 }
 @media screen and (max-width: 570px) {
 	#left_side {
-		grid-area: body3_1
+		grid-area: body3_1;
+		width: 82vw; 
+		max-width: 800px; 
 	}
 	#right_side{
 		grid-area:body2_1;
+		width: 82vw; 
+		max-width: 800px; 
+	}
+	#content{
+		/*width: 10px;*/
 	}
 }
-
-
-
 
 #boombox {
 	grid-area: body2;
 	width: 82vw; 
 	max-width: 800px; 
-	/*margin: 0px auto;*/
+	margin: 0px auto;
 }
 @media screen and (max-width: 570px) {
 	#boombox {
@@ -122,7 +126,7 @@ body {
 	background: var(--boxMain) repeat-x bottom left;
 	/*background-size: 33.3% 70%;*/
 	border: 6px solid var(--black);
-	/*border-radius: var(--borderRad);*/
+	border-radius: var(--borderRad);
 }
 /*small screen with one circle*/
 @media screen and (max-width: 570px) {
@@ -162,14 +166,14 @@ body {
 		"vol1 vol2 vol3 vol4 vol5 volmaster power"
 		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	justify-items: center; align-items: center;
-	padding: 1vmax;
+	padding: 2vmax;
 	background-color: var(--boxSecond);
 	border-bottom: var(--border);
 }
 /* change control grid areas for smaller boom box */
 @media screen and (max-width: 570px) {
 	.master-controls {
-	grid-gap: 10px;
+	grid-gap: 12px;
 	grid-template-rows: repeat(6, auto) 180px auto;
 	grid-template-columns: repeat(6, 15%) 12%;
 		/*grid-template-columns: 16% 1fr 12%;*/
@@ -184,7 +188,6 @@ body {
 			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
 	}
 }
-
 
 .playback-controls{
 	grid-area:power; 
@@ -208,7 +211,6 @@ body {
 	cursor: pointer;
 	/*background-color: darkgray;*/
 	background-color: #AAAAAAAA;
-
 	/*grid-column: 2 / 6;*/
 	/*grid-row: 1 / 2;*/
 }
@@ -225,8 +227,6 @@ body {
 	/*grid-row: 3 / 3;*/
 	background-color: #F00000AA;
 }
-
-
 
 
 .aux1{
