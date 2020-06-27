@@ -21,6 +21,14 @@
 
 
 }
+
+@font-face {
+    font-family: lato;
+    src: url(files/lato_thin.woff);
+    font-weight: bold;
+    }
+
+
 * {box-sizing: border-box;}
 body {
 	display: grid;
