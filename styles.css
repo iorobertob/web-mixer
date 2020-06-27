@@ -91,7 +91,7 @@ body {
 #right_side {
 	grid-area:body3;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
 	#left_side {
 		grid-area: body3_1;
 		width: 82vw; 
