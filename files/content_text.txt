@@ -1,10 +1,10 @@
 <p>
-<b>Žanras:</b> Interaktyvus garsinis pasivaikščiojimas
+Žanras: Interaktyvus garsinis pasivaikščiojimas
 <br/>
 <br/>
 <br/>
 </p>
-<b>Trukmė:</b> 1,5-2 val. / iki 30 dalyvių / amžiaus cenzo nėra
+Trukmė: 1,5-2 val. / iki 30 dalyvių / amžiaus cenzo nėra
 <br>
 <br>
 <b>Kūrybinė komanda:</b> Agnė Matulevičiūtė, Edvinas Kopcevas
