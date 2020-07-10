@@ -154,7 +154,7 @@ body {
 .master-controls {
 
 	display: grid;
-	grid-template-rows: repeat(6, auto) 300px auto;
+	grid-template-rows: repeat(6, auto) 300px auto auto;
 	grid-template-columns: repeat(6, 15%) 12%;
 	/*name our grid areas so they are more manipulative later*/
 	grid-template-areas:
@@ -228,7 +228,7 @@ body {
 
 @media screen and (max-width: 600px){
 	.playback-controls{
-		margin-left: -32px;
+		margin-left: -27px;
 		width: 50px;
 	}
 	.tape-controls-play{
