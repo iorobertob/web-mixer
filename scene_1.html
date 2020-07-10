@@ -20,11 +20,11 @@
 <div id="all_grid" >
 
   <div id="audio_files">
-    <!-- <audio  loop src="https://dev.ideas-block.com/mixer/files/percussion.mp3" id="track1" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/assortment.mp3" id="track2" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/bass.mp3"       id="track3" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/lead.mp3"       id="track4" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/harmony.mp3"    id="track5" crossorigin="anonymous" ></audio> -->
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/city/1.mp3" id="track1" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/nature/1.mp3" id="track2" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/people/1.mp3"       id="track3" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/silence/1.mp3"       id="track4" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/noise/1.mp3"    id="track5" crossorigin="anonymous" ></audio>
   </div>
   
   
@@ -55,7 +55,7 @@
 
   <p></p>
 
-  <a class="btn btn-primary" id="randomButton" style="grid-area: scene1;">Random...</a>
+  <!-- <a class="btn btn-primary" id="randomButton" style="grid-area: scene1;">Random...</a> -->
   <!-- <a href="https://dev.ideas-block.com/mixer/" class="btn btn-primary" style="grid-area: scene1;">Scene 1</a>
   <a href="scene_2.html" class="btn btn-primary" style="grid-area: scene2;">Scene 2</a>
   <a href="scene_3.html" class="btn btn-primary" style="grid-area: scene3;">Scene 3</a>
@@ -248,7 +248,7 @@
         <option value="0" label="min">
         <option value="2" label="max">
       </datalist>
-      <label for="vol_label_5">Triukšmas <br>Noise</label>
+      <label for="vol_label_5" >Triukšmas <br>Noise</label>
 
       <!-- VOL MASTER-->
       <input type="range" id="volumeMASTER" class="control-volume-MASTER" min="0" max="1.5" value="1" list="gain-vals" step="0.01" data-action="volume" />
@@ -258,11 +258,22 @@
       </datalist>
 
 
-      <label for="vol_label_MASTER">MASTER</label>
+      <label for="vol_label_MASTER">GARSUMAS <br>MASTER</label>
+
       <label for="vol_label_aux1">Reverb</label>
       <label for="vol_label_aux2">Delay</label>
       <label for="vol_label_aux3">Chorus</label>
       <label for="vol_label_aux4">Overdrive</label>
+
+
+      <a class="btn btn-primary" id="randomButton" style="font-size:11px; grid-area: random1;">Random..</a>
+      <a class="btn btn-primary" id="randomButton2" style="font-size:11px; grid-area: random2;">Random..</a>
+      <a class="btn btn-primary" id="randomButton3" style="font-size:11px; grid-area: random3;">Random..</a>
+      <a class="btn btn-primary" id="randomButton4" style="font-size:11px; grid-area: random4;">Random..</a>
+      <a class="btn btn-primary" id="randomButton5" style="font-size:11px; grid-area: random5;">Random..</a>
+
+
+
    
       <div class="playback-controls">
         <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">

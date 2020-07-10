@@ -109,21 +109,21 @@ body {
 
 #boombox {
 	grid-area: body2;
-	width: 82vw; 
+	width: 90vw; 
 	max-width: 800px; 
 	margin: 0px auto;
 }
 @media screen and (max-width: 600px) {
 	#boombox {
 		grid-area:body1;
-		max-width: 600px;
+		/*max-width: 600px;*/
 	}
 }
 
 .boombox-body {
 	/*gradient with two circles for speakers*/
 /* 	padding-top: 3vh; */
-	background: var(--boxMain) repeat-x bottom left;
+	/*background: var(--boxMain) repeat-x bottom left;*/
 	/*background-size: 33.3% 70%;*/
 	border: 6px solid var(--black);
 	border-radius: var(--borderRad);
@@ -133,7 +133,7 @@ body {
 	.boombox-body {
 		background-repeat: no-repeat;
 		background-position: center top;
-		background-size: 70% 70%;
+		background-size: 100% 100%;
 		background-image:
 /*		radial-gradient(circle,
 			var(--boxMain) 4vmin,
@@ -152,6 +152,7 @@ body {
 }
 
 .master-controls {
+
 	display: grid;
 	grid-template-rows: repeat(6, auto) 300px auto;
 	grid-template-columns: repeat(6, 15%) 12%;
@@ -164,7 +165,8 @@ body {
 		"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
 		"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
 		"vol1 vol2 vol3 vol4 vol5 volmaster power"
-		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
+		"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower"
+		"random1 random2 random3 random4 random5 random6 random7";
 	justify-items: center; align-items: center;
 	padding: 2vmax;
 	background-color: var(--boxSecond);
@@ -173,7 +175,7 @@ body {
 /* change control grid areas for smaller boom box */
 @media screen and (max-width: 600px) {
 	.master-controls {
-	grid-gap: 12px;
+	grid-gap: 10px;
 	grid-template-rows: repeat(6, auto) 180px auto;
 	grid-template-columns: repeat(6, 15%) 12%;
 		/*grid-template-columns: 16% 1fr 12%;*/
@@ -185,7 +187,8 @@ body {
 			"aux5_1 aux5_2 aux5_3 aux5_4 aux5_5 auxmaster5 aux5_power"
 			"aux6_1 aux6_2 aux6_3 aux6_4 aux6_5 auxmaster6 aux6_power"
 			"vol1 vol2 vol3 vol4 vol5 volmaster power"
-			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower";
+			"vollab1 vollab2 vollab3 vollab4 vollab5 vollabmaster vollabpower"
+			"random1 random2 random3 random4 random5 random6 random7";
 	}
 }
 
@@ -198,11 +201,6 @@ body {
 	padding: 5px;
 }
 
-@media screen and (max-width: 600px){
-	.playback-controls{
-		margin-left: 32px;
-	}
-}
 
 .control-power {
 	/*grid-area: power; align-self: center;*/
@@ -227,6 +225,27 @@ body {
 	/*grid-row: 3 / 3;*/
 	background-color: #F00000AA;
 }
+
+@media screen and (max-width: 600px){
+	.playback-controls{
+		margin-left: -32px;
+		width: 50px;
+	}
+	.tape-controls-play{
+		margin-left: -25px;
+	}
+	.control-power{
+		width: 40px; height: 40px;
+		align-self: center;
+		margin-left: -5px;
+	}
+	.control-rec{
+		width:40px; height: 40px;
+		align-self: center;
+		margin-left: -5px;
+	}
+}
+
 
 
 .aux1{
@@ -438,7 +457,21 @@ label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 /*label[for="panner"] {grid-area: vollab2; margin-top: 15px;}*/
 @media screen and (max-width: 600px) {
 	label[for="volume"], label[for="panner"] {margin-top: 0px;}
+
+	label[for="vol_label_aux1"] {grid-area: auxpower; margin-top: 15px;}
+	label[for="vol_label_aux2"] {grid-area: aux2_power; margin-top: 15px;}
+	label[for="vol_label_aux3"] {grid-area: aux3_power; margin-top: 15px;}
+	label[for="vol_label_aux4"] {grid-area: aux4_power; margin-top: 15px;}
 	/*.control-volume {margin-bottom: 20px;}*/
+
+	font-size:15px;
+
+	label[for="vol_label_aux1"] {font-size:15px;}
+	label[for="vol_label_aux2"] {font-size:15px;}
+	label[for="vol_label_aux3"] {font-size:15px;}
+	label[for="vol_label_aux4"] {font-size:15px;}
+	label[for="vol_label_MASTER"] {font-size:15px;}
+}
 }
 
 
@@ -549,9 +582,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 /*~~~~~~~~~~~~~~~~ the play pause & power icons*/
 [data-playing] {
-		background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="black" /></svg>') no-repeat center center;
-		background-size: 60% 60%;
-		cursor: pointer;
+	background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="black" /></svg>') no-repeat center center;
+	background-size: 60% 60%;
+	cursor: pointer;
 }
 [data-playing]:hover {
 	background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="hsla(32, 100%, 50%, 1)" /></svg>') no-repeat center center;
@@ -562,9 +595,57 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 	background-size: 60% 60%;
 }
 [data-playing="true"]:hover {
-				background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" fill="hsla(32, 100%, 50%, 1)" /></svg>') no-repeat center center;
-			background-size: 60% 60%;
+	background: transparent url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" fill="hsla(32, 100%, 50%, 1)" /></svg>') no-repeat center center;
+	background-size: 60% 60%;
 }
+
+
+@media screen and (max-width: 600px) {
+	[data-playing] {
+		background-size: 30% 30%;
+	}
+	[data-playing]:hover {
+		background-size: 30% 30%;
+	}
+	[data-playing="true"] {
+		background-size: 30% 30%;
+	}
+	[data-playing="true"]:hover {
+		background-size: 30% 30%;
+	}
+
+
+	[stop]{
+	background-color: #AAAAAAAA;
+	}
+	[stop]:hover{
+		background-color: #AAAAAAFF;
+	}
+	[stop="true"]{
+		background-color: #AAAAAAFF;
+	}
+	[stop="true"]:hover{
+		background-color: #AAAAAAAA;
+	}
+
+
+
+	[data-recording]{
+		background-size: 30% 30%;
+	}
+	[data-recording]:hover{
+		background-size: 30% 30%;
+	}
+	[data-recording="true"]{
+		background-size: 30% 30%;
+	}
+	[data-recording="true"]:hover{
+		background-size: 30% 30%;
+	}
+
+}
+
+
 /*[data-power] {
 	background: var(--boxSecond) url('data:image/svg+xml; charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z" fill="black" /></svg>') no-repeat center center;
 	background-size: 60% 60%;

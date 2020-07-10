@@ -113,11 +113,61 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 
 
 
-// RANDOM BUTTON 
-const randomButton = document.getElementById('randomButton');
-randomButton.addEventListener('click', function() {
+// RANDOM BUTTONS
+const randomButton1 = document.getElementById('randomButton');
+randomButton1.addEventListener('click', function() {
 	
-	randomiseTracks();
+	audioElement.pause();
+	audioElement.currentTime = 0;
+	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * 5)]  ;
+	if (playbutton.dataset.playing === 'true') {
+		audioElement.play();
+	}
+	
+
+}, false);
+const randomButton2 = document.getElementById('randomButton');
+randomButton2.addEventListener('click', function() {
+	
+	audioElement2.pause();
+	audioElement2.currentTime = 0;
+	document.getElementById('track1').src = audio_files_nature   [Math.floor(Math.random() * 5)]  ;
+	if (playbutton.dataset.playing === 'true') {
+		audioElement2.play();
+	}
+
+}, false);
+const randomButton3 = document.getElementById('randomButton');
+randomButton3.addEventListener('click', function() {
+	
+	audioElement3.pause();
+	audioElement3.currentTime = 0;
+	document.getElementById('track1').src = audio_files_people   [Math.floor(Math.random() * 5)]  ;
+	if (playbutton.dataset.playing === 'true') {
+		audioElement3.play();
+	}
+
+}, false);
+const randomButton4 = document.getElementById('randomButton');
+randomButton4.addEventListener('click', function() {
+	
+	audioElement4.pause();
+	audioElement4.currentTime = 0;
+	document.getElementById('track1').src = audio_files_silence   [Math.floor(Math.random() * 5)]  ;
+	if (playbutton.dataset.playing === 'true') {
+		audioElement4.play();
+	}
+
+}, false);
+const randomButton5 = document.getElementById('randomButton');
+randomButton5.addEventListener('click', function() {
+	
+	audioElement5.pause();
+	audioElement5.currentTime = 0;
+	document.getElementById('track1').src = audio_files_noise   [Math.floor(Math.random() * 5)]  ;
+	if (playbutton.dataset.playing === 'true') {
+		audioElement5.play();
+	}
 
 }, false);
 
