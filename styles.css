@@ -228,7 +228,7 @@ body {
 
 @media screen and (max-width: 600px){
 	.playback-controls{
-		margin-left: -27px;
+		margin-left: -25px;
 		width: 50px;
 	}
 	.tape-controls-play{
