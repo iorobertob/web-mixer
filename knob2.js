@@ -10,9 +10,9 @@ knob.addEventListener('touchstart', e => {
   touch.start = e.changedTouches[0].screenY;
 });
 
-knob_freq.addEventListener('touchstart', e => {
-  touch.start = e.changedTouches[0].screenY;
-});
+// knob_freq.addEventListener('touchstart', e => {
+//   touch.start = e.changedTouches[0].screenY;
+// });
 
 
 knob.addEventListener('touchmove', e => {

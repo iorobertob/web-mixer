@@ -20,6 +20,34 @@ function createDownloadLink() {
     });
 }
 
+
+function randomiseTracks(){
+
+	stopAudio();
+
+	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track2').src = audio_files_nature [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track3').src = audio_files_people [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track4').src = audio_files_silence[Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track5').src = audio_files_noise  [Math.floor(Math.random() * 5)]  ;
+
+	audioElement  = document.getElementById('track1');
+	audioElement2 = document.getElementById('track2');
+	audioElement3 = document.getElementById('track3');
+	audioElement4 = document.getElementById('track4');
+	audioElement5 = document.getElementById('track5');
+
+	// track  = audioCtx.createMediaElementSource(audioElement);
+	// track2 = audioCtx.createMediaElementSource(audioElement2);
+	// track3 = audioCtx.createMediaElementSource(audioElement3);
+	// track4 = audioCtx.createMediaElementSource(audioElement4);
+	// track5 = audioCtx.createMediaElementSource(audioElement5);
+
+}
+
+
+
+
 // instigate our audio context
 // for cross browser
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -30,19 +58,72 @@ var tuna = new Tuna(audioCtx);
 
 reverbjs.extend(audioCtx);
 
+
+var audio_files_city = [
+  "https://dev.ideas-block.com/mixer/files/city/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/city/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/city/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/city/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/city/5.mp3"
+];
+var audio_files_nature = [
+  "https://dev.ideas-block.com/mixer/files/nature/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/nature/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/nature/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/nature/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/nature/5.mp3"
+];
+var audio_files_people = [
+  "https://dev.ideas-block.com/mixer/files/people/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/people/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/people/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/people/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/people/5.mp3"
+];
+var audio_files_silence = [
+  "https://dev.ideas-block.com/mixer/files/silence/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/silence/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/silence/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/silence/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/silence/5.mp3"
+];
+var audio_files_noise = [
+  "https://dev.ideas-block.com/mixer/files/noise/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/noise/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/noise/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/noise/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/noise/5.mp3"
+];
+
+
+
 // load some sound
 // const audioElement = document.querySelector('audio');
-const audioElement  = document.getElementById('track1');
-const audioElement2 = document.getElementById('track2');
-const audioElement3 = document.getElementById('track3');
-const audioElement4 = document.getElementById('track4');
-const audioElement5 = document.getElementById('track5');
+var audioElement  = document.getElementById('track1');
+var audioElement2 = document.getElementById('track2');
+var audioElement3 = document.getElementById('track3');
+var audioElement4 = document.getElementById('track4');
+var audioElement5 = document.getElementById('track5');
 
-const track  = audioCtx.createMediaElementSource(audioElement);
-const track2 = audioCtx.createMediaElementSource(audioElement2);
-const track3 = audioCtx.createMediaElementSource(audioElement3);
-const track4 = audioCtx.createMediaElementSource(audioElement4);
-const track5 = audioCtx.createMediaElementSource(audioElement5);
+var track  = audioCtx.createMediaElementSource(audioElement);
+var track2 = audioCtx.createMediaElementSource(audioElement2);
+var track3 = audioCtx.createMediaElementSource(audioElement3);
+var track4 = audioCtx.createMediaElementSource(audioElement4);
+var track5 = audioCtx.createMediaElementSource(audioElement5);
+
+
+
+// RANDOM BUTTON 
+const randomButton = document.getElementById('randomButton');
+randomButton.addEventListener('click', function() {
+	
+	randomiseTracks();
+
+}, false);
+
+
+
+
 
 // volume. ===== 1 ======
 const gainNode = audioCtx.createGain();
@@ -102,7 +183,7 @@ gainNodeMaster.gain.value = 1;
 var knob_id;
 var gains_aux_array = [];
 var knobs_aux_array = [];
-for (i=1; i <= 6; i++){
+for (i=1; i <= 4; i++){
 
 	for(j=1; j <= 5; j++){
 
@@ -316,11 +397,11 @@ track4.connect(gains_aux_array[18]).connect(overdriveNode).connect(gainNodeMaste
 track5.connect(gains_aux_array[19]).connect(overdriveNode).connect(gainNodeMaster); //5
 
 // FILTER PATCHING
-track.connect(gains_aux_array[25]).connect(filter_array[0]).connect(gainNodeMaster); //1
-track2.connect(gains_aux_array[26]).connect(filter_array[1]).connect(gainNodeMaster); //2
-track3.connect(gains_aux_array[27]).connect(filter_array[2]).connect(gainNodeMaster); //3
-track4.connect(gains_aux_array[28]).connect(filter_array[3]).connect(gainNodeMaster); //4
-track5.connect(gains_aux_array[29]).connect(filter_array[4]).connect(gainNodeMaster); //5
+// track.connect(gains_aux_array[25]).connect(filter_array[0]).connect(gainNodeMaster); //1
+// track2.connect(gains_aux_array[26]).connect(filter_array[1]).connect(gainNodeMaster); //2
+// track3.connect(gains_aux_array[27]).connect(filter_array[2]).connect(gainNodeMaster); //3
+// track4.connect(gains_aux_array[28]).connect(filter_array[3]).connect(gainNodeMaster); //4
+// track5.connect(gains_aux_array[29]).connect(filter_array[4]).connect(gainNodeMaster); //5
 
 
 gainNodeMaster.connect(audioCtx.destination);
@@ -332,30 +413,35 @@ filter.frequency.value = 300;
 var recorder = new Recorder(gainNodeMaster);
 
 
+function stopAudio(){
+	playButton.dataset.playing='false';
+		
+	if (recButton.dataset.recording==='true'){
+		// Stop and clear recorder and create WAV download link using audio data blob
+		recorder && recorder.stop();
+    	createDownloadLink();
+    	recorder.clear();
+    	recButton.dataset.recording='false';
+	}
+	
+	audioElement.pause();
+	audioElement.currentTime = 0;
+	audioElement2.pause();
+	audioElement2.currentTime = 0;
+	audioElement3.pause();
+	audioElement3.currentTime = 0;
+	audioElement4.pause();
+	audioElement4.currentTime = 0;
+	audioElement5.pause();
+	audioElement5.currentTime = 0;
+}
+
 // STOP BUTTON 
 const powerButton = document.querySelector('.control-power');
 powerButton.addEventListener('click', function() {
 
-		playButton.dataset.playing='false';
+	stopAudio();
 		
-		if (recButton.dataset.recording==='true'){
-			// Stop and clear recorder and create WAV download link using audio data blob
-			recorder && recorder.stop();
-	    	createDownloadLink();
-	    	recorder.clear();
-	    	recButton.dataset.recording='false';
-		}
-		
-		audioElement.pause();
-		audioElement.currentTime = 0;
-		audioElement2.pause();
-		audioElement2.currentTime = 0;
-		audioElement3.pause();
-		audioElement3.currentTime = 0;
-		audioElement4.pause();
-		audioElement4.currentTime = 0;
-		audioElement5.pause();
-		audioElement5.currentTime = 0;
 }, false);
 
 
