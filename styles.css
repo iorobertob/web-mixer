@@ -464,13 +464,14 @@ label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 	label[for="vol_label_aux4"] {grid-area: aux4_power; margin-top: 15px;}
 	/*.control-volume {margin-bottom: 20px;}*/
 
-	font-size:15px;
 
-	label[for="vol_label_aux1"] {font-size:15px;}
-	label[for="vol_label_aux2"] {font-size:15px;}
-	label[for="vol_label_aux3"] {font-size:15px;}
-	label[for="vol_label_aux4"] {font-size:15px;}
-	label[for="vol_label_MASTER"] {font-size:15px;}
+
+	label[for="vol_label_1"] {font-size:13px;}
+	label[for="vol_label_2"] {font-size:13px;}
+	label[for="vol_label_3"] {font-size:13px;}
+	label[for="vol_label_4"] {font-size:13px;}
+	label[for="vol_label_5"] {font-size:13px;}
+	label[for="vol_label_MASTER"] {font-size:13px;}
 }
 }
 
