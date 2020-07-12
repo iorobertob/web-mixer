@@ -175,7 +175,7 @@ body {
 /* change control grid areas for smaller boom box */
 @media screen and (max-width: 600px) {
 	.master-controls {
-	grid-gap: 10px;
+	grid-gap: 8px;
 	grid-template-rows: repeat(6, auto) 180px auto;
 	grid-template-columns: repeat(6, 15%) 12%;
 		/*grid-template-columns: 16% 1fr 12%;*/
