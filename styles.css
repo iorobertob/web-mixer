@@ -454,6 +454,9 @@ label[for="vol_label_MASTER"] {grid-area: vollabmaster; margin-top: 15px;}
 
 
 label[for="vol_label_aux1"] span.mobile{display: none;}
+label[for="vol_label_aux2"] span.mobile{display: none;}
+label[for="vol_label_aux3"] span.mobile{display: none;}
+label[for="vol_label_aux4"] span.mobile{display: none;}
 
 /*.control-panner {grid-area: panin;}
 .control-panner::before {content: 'left';}
@@ -464,6 +467,15 @@ label[for="vol_label_aux1"] span.mobile{display: none;}
 
 	label[for="vol_label_aux1"] span.large{display: none;}
 	label[for="vol_label_aux1"] span.mobile{display: block;}
+
+	label[for="vol_label_aux2"] span.large{display: none;}
+	label[for="vol_label_aux2"] span.mobile{display: block;}
+
+	label[for="vol_label_aux3"] span.large{display: none;}
+	label[for="vol_label_aux3"] span.mobile{display: block;}
+
+	label[for="vol_label_aux4"] span.large{display: none;}
+	label[for="vol_label_aux4"] span.mobile{display: block;}
 
 	label[for="vol_label_aux1"] {grid-area: auxpower; margin-top: 15px;}
 	label[for="vol_label_aux2"] {grid-area: aux2_power; margin-top: 15px;}
@@ -479,6 +491,10 @@ label[for="vol_label_aux1"] span.mobile{display: none;}
 	label[for="vol_label_4"] {font-size:10px;}
 	label[for="vol_label_5"] {font-size:10px;}
 	label[for="vol_label_MASTER"] {font-size:10px;}
+
+	.randombutton{
+		font-size:8px;
+	}
 }
 }
 
