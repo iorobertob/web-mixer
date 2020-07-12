@@ -458,6 +458,10 @@ label[for="vol_label_aux2"] span.mobile{display: none;}
 label[for="vol_label_aux3"] span.mobile{display: none;}
 label[for="vol_label_aux4"] span.mobile{display: none;}
 
+.randombutton span.mobile{
+		display:none;
+	}
+
 /*.control-panner {grid-area: panin;}
 .control-panner::before {content: 'left';}
 .control-panner::after {content: 'right';}*/
@@ -494,6 +498,12 @@ label[for="vol_label_aux4"] span.mobile{display: none;}
 
 	.randombutton{
 		font-size:8px;
+	}
+	.randombutton span.large{
+		display:none;
+	}
+	.randombutton span.mobile{
+		display:block;
 	}
 }
 }
