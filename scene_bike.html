@@ -21,7 +21,14 @@
 <div id="all_grid" >
 
   <div id="audio_files">
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/bike/city/1-1.mp3"    id="track1" crossorigin="anonymous" ></audio>
+    <!-- <audio  loop src="https://dev.ideas-block.com/mixer/files/bike/city/1-1.mp3"    id="track1" crossorigin="anonymous" ></audio> -->
+
+    <audio loop id="track1" controls="controls">
+      <source id="audioSource" src="https://dev.ideas-block.com/mixer/files/bike/city/1-1.mp3"></source>
+        Your browser does not support the audio format.
+    </audio>
+
+
     <audio  loop src="https://dev.ideas-block.com/mixer/files/bike/nature/2-1.mp3"  id="track2" crossorigin="anonymous" ></audio>
     <audio  loop src="https://dev.ideas-block.com/mixer/files/bike/people/3-1.mp3"  id="track3" crossorigin="anonymous" ></audio>
     <audio  loop src="https://dev.ideas-block.com/mixer/files/bike/silence/4-1.mp3" id="track4" crossorigin="anonymous" ></audio>
