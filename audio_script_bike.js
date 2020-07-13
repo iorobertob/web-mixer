@@ -173,7 +173,7 @@ randomButton2.addEventListener('click', function() {
 	
 	audioElement2.pause();
 	audioElement2.currentTime = 0;
-	document.getElementById('track1').src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
+	document.getElementById('track2').src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
 	if (playButton.dataset.playing === 'true') {
 		audioElement2.play();
 	}
@@ -186,7 +186,7 @@ randomButton3.addEventListener('click', function() {
 	
 	audioElement3.pause();
 	audioElement3.currentTime = 0;
-	document.getElementById('track1').src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
+	document.getElementById('track3').src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
 	if (playButton.dataset.playing === 'true') {
 		audioElement3.play();
 	}
@@ -199,7 +199,7 @@ randomButton4.addEventListener('click', function() {
 	
 	audioElement4.pause();
 	audioElement4.currentTime = 0;
-	document.getElementById('track1').src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
+	document.getElementById('track4').src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
 	if (playButton.dataset.playing === 'true') {
 		audioElement4.play();
 	}
@@ -212,7 +212,7 @@ randomButton5.addEventListener('click', function() {
 	
 	audioElement5.pause();
 	audioElement5.currentTime = 0;
-	document.getElementById('track1').src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
+	document.getElementById('track5').src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
 	if (playButton.dataset.playing === 'true') {
 		audioElement5.play();
 	}
