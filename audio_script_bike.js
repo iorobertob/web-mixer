@@ -138,6 +138,7 @@ randomButton1.addEventListener('click', function() {
 		  playPromise.then(function() {
 		    // Automatic playback started!
 		    layButton.dataset.playing = 'true';
+		    alert("lala");
 		  }).catch(function(error) {
 		    // Automatic playback failed.
 		    // Show a UI element to let the user manually start playback.
