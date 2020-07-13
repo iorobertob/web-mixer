@@ -18,7 +18,6 @@ Bike walk (maršrutas, skirtas apvažiuoti kuo skirtingesnes garsovaizdžio viet
 </li>
 </ul>
 <br>
-<br>
 Pasibaigus maršrutams visi garsai kompozitorių surenkami, apdirbami ir patalpinami į specialiai projektui sukurtą svetainę. Antroji interaktyvi garsovaizdžio tyrimo dalis – internete pasirodys interaktyvus, specialiai šiam projektui suprogramuotas instrumentas, kuriame girdimi garsinių pasivaikščiojimų metu žmonių įrašyti garsai. Jais galima groti: pasirinkti garsumą, tylumą, pritaikyti įvairių garso efektų.
 
 

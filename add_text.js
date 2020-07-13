@@ -34,6 +34,7 @@
          if (httpRequestIntro.status === 200) {
           //Set the contents of your p tag
            document.getElementById("content_text_intro").innerHTML = httpRequestIntro.responseText;
+           document.getElementById("content_text_intro_left").innerHTML = httpRequestIntro.responseText;
           } else {
            alert('There was a problem with the request.');
           }

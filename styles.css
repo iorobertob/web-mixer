@@ -90,10 +90,23 @@ body {
 	grid-area:body3_2;
 }
 
+
+#intro_left{
+	grid-area:body1;
+}
+#content span{display: none;}
+
 #right_side {
 	grid-area:body3;
 }
 @media screen and (max-width: 600px) {
+
+	#content span{display: block;}
+	
+	#intro_left span{
+		display:none;
+	}
+
 	#left_side {
 		grid-area: body3_1;
 		width: 82vw; 
