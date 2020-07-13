@@ -118,7 +118,7 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
-	audioElement.pause();
+	// audioElement.pause();
 	audioElement.currentTime = 0;
 
 	var audio = document.getElementById('track1');
