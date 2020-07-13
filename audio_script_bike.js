@@ -120,7 +120,7 @@ const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
 	var audio  = document.getElementById('track1');
-	var source = document.getElementById('audioSource');
+	var source = document.getElementById('audioSource1');
 	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
 	audio.load();
@@ -143,7 +143,7 @@ const randomButton2 = document.getElementById('randomButton2');
 randomButton2.addEventListener('click', function() {
 
 	var audio  = document.getElementById('track2');
-	var source = document.getElementById('audioSource');
+	var source = document.getElementById('audioSource2');
 	source.src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
 	alert(source.src);
 	audio.load();
@@ -167,7 +167,7 @@ const randomButton3 = document.getElementById('randomButton3');
 randomButton3.addEventListener('click', function() {
 
 	var audio  = document.getElementById('track3');
-	var source = document.getElementById('audioSource');
+	var source = document.getElementById('audioSource3');
 	source.src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
 
 	audio.load();
@@ -190,7 +190,7 @@ const randomButton4 = document.getElementById('randomButton4');
 randomButton4.addEventListener('click', function() {
 
 	var audio  = document.getElementById('track4');
-	var source = document.getElementById('audioSource');
+	var source = document.getElementById('audioSource4');
 	source.src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
 
 	audio.load();
@@ -213,7 +213,7 @@ const randomButton5 = document.getElementById('randomButton5');
 randomButton5.addEventListener('click', function() {
 
 	var audio  = document.getElementById('track5');
-	var source = document.getElementById('audioSource');
+	var source = document.getElementById('audioSource5');
 	source.src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
 
 	audio.load();
