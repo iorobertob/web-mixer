@@ -129,35 +129,14 @@ randomButton1.addEventListener('click', function() {
 
 	if (playButton.dataset.playing === 'true') 
 	{
-		// audio.play();
-
 
 		audio.play().then(function() {
-		    // Automatic playback started!
+		    // Playback started!
 		    playButton.dataset.playing = 'true';
 		  }).catch(function(error) {
-		    // Automatic playback failed.
-		    // Show a UI element to let the user manually start playback.
+		    // Playback failed.
 		    alert(error);
 		  });
-
-
-		// var playPromise = audio.play();
-
-		// // In browsers that don’t yet support this functionality,
-		// // playPromise won’t be defined.
-		// if (playPromise !== undefined) {
-		//   playPromise.then(function() {
-		//     // Automatic playback started!
-		//     layButton.dataset.playing = 'true';
-		//     alert("lala");
-		//   }).catch(function(error) {
-		//     // Automatic playback failed.
-		//     // Show a UI element to let the user manually start playback.
-		//     alert("undefined");
-		//   });
-		// }
-
 
 	}
 
