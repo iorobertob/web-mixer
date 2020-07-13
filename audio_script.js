@@ -137,6 +137,69 @@ var track4 = audioCtx.createMediaElementSource(audioElement4);
 var track5 = audioCtx.createMediaElementSource(audioElement5);
 
 
+// STOP BUTTON 
+const powerButton = document.querySelector('.control-power');
+powerButton.addEventListener('click', function() {
+
+  stopAudio();
+    
+}, false);
+
+
+// PLAY BUTTON 
+const playButton = document.querySelector('.tape-controls-play');
+playButton.addEventListener('click', function() {
+  // check if context is in suspended state (autoplay policy)
+
+
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  if (this.dataset.playing === 'false') {
+    audioElement.play();
+    audioElement2.play();
+    audioElement3.play();
+    audioElement4.play();
+    audioElement5.play();
+    this.dataset.playing = 'true';
+
+  // if track is playing pause it
+  } else if (this.dataset.playing === 'true') {
+    audioElement.pause();
+    audioElement2.pause();
+    audioElement3.pause();
+    audioElement4.pause();
+    audioElement5.pause();
+    this.dataset.playing = 'false';
+
+
+  }
+  let state = this.getAttribute('aria-checked') === "true" ? true : false;
+  this.setAttribute( 'aria-checked', state ? "false" : "true" );
+}, false);
+
+
+// REC BUTTON
+const recButton = document.querySelector('.control-rec');
+recButton. addEventListener('click',function(){
+
+  if (this.dataset.recording === 'false') {
+    this.dataset.recording = 'true';
+    recorder && recorder.record();
+  }
+  else if (this.dataset.recording === 'true') {
+    // Stop and clear recorder and create WAV download link using audio data blob
+    recorder && recorder.stop();
+      createDownloadLink();
+      recorder.clear();
+      this.dataset.recording = 'false';
+  }
+
+  
+
+},false);
+
+
 
 // RANDOM BUTTONS
 const randomButton1 = document.getElementById('randomButton');
@@ -145,7 +208,7 @@ randomButton1.addEventListener('click', function() {
 	audioElement.pause();
 	audioElement.currentTime = 0;
 	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
-	if (this.playbutton.dataset.playing === 'true') {
+	if (playbutton.dataset.playing === 'true') {
 		audioElement.play();
 	}
 	
@@ -511,62 +574,3 @@ function stopAudio(){
 	audioElement5.currentTime = 0;
 }
 
-// STOP BUTTON 
-const powerButton = document.querySelector('.control-power');
-powerButton.addEventListener('click', function() {
-
-	stopAudio();
-		
-}, false);
-
-
-// PLAY BUTTON 
-const playButton = document.querySelector('.tape-controls-play');
-playButton.addEventListener('click', function() {
-	// check if context is in suspended state (autoplay policy)
-
-
-	if (audioCtx.state === 'suspended') {
-		audioCtx.resume();
-	}
-	if (this.dataset.playing === 'false') {
-		audioElement.play();
-		audioElement2.play();
-		audioElement3.play();
-		audioElement4.play();
-		audioElement5.play();
-		this.dataset.playing = 'true';
-
-	// if track is playing pause it
-	} else if (this.dataset.playing === 'true') {
-		audioElement.pause();
-		audioElement2.pause();
-		audioElement3.pause();
-		audioElement4.pause();
-		audioElement5.pause();
-		this.dataset.playing = 'false';
-
-
-	}
-	let state = this.getAttribute('aria-checked') === "true" ? true : false;
-	this.setAttribute( 'aria-checked', state ? "false" : "true" );
-}, false);
-
-const recButton = document.querySelector('.control-rec');
-recButton. addEventListener('click',function(){
-
-	if (this.dataset.recording === 'false') {
-		this.dataset.recording = 'true';
-		recorder && recorder.record();
-	}
-	else if (this.dataset.recording === 'true') {
-		// Stop and clear recorder and create WAV download link using audio data blob
-		recorder && recorder.stop();
-    	createDownloadLink();
-    	recorder.clear();
-    	this.dataset.recording = 'false';
-	}
-
-	
-
-},false);
