@@ -10,11 +10,13 @@
 	--cyan: hsla(195, 98%, 55%, 1);
 	--white: hsla(0, 0%, 95%, 1);
 	--black: hsla(0, 0%, 10%, 1);
+	--gray:  hsla(0,0%,0%,0.2);
 
 	/* abstract our colours */
 	--boxMain: var(--blue);
 	--boxSecond: var(--cyan);
 	--boxHigh: var(--orange);
+	--boxGray: var(--gray);
 
 	--border: 1vmin solid var(--black);
 	--borderRad: 2px;
@@ -169,7 +171,7 @@ body {
 		"random1 random2 random3 random4 random5 random6 random7";
 	justify-items: center; align-items: center;
 	padding: 2vmax;
-	background-color: var(--boxSecond);
+	background-color: var(--boxGray);
 	border-bottom: var(--border);
 }
 /* change control grid areas for smaller boom box */
