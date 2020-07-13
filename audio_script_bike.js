@@ -60,39 +60,48 @@ reverbjs.extend(audioCtx);
 
 
 var audio_files_city = [
-  "https://dev.ideas-block.com/mixer/files/bike/city/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/city/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/city/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/city/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/city/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-1.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-2.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-3.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-4.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-5.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-6.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-7.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-8.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-9.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/city/1-10.mp3"
 ];
 var audio_files_nature = [
-  "https://dev.ideas-block.com/mixer/files/bike/nature/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/nature/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/nature/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/nature/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/nature/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-1.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-2.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-3.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-4.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-5.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/nature/2-6.mp3"
 ];
 var audio_files_people = [
-  "https://dev.ideas-block.com/mixer/files/bike/people/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/people/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/people/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/people/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/people/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-1.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-2.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-3.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-4.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-5.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-6.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/people/3-7.mp3"
 ];
 var audio_files_silence = [
-  "https://dev.ideas-block.com/mixer/files/bike/silence/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/silence/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/silence/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/silence/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/silence/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/bike/silence/4-1.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/silence/4-2.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/silence/4-3.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/silence/4-4.mp3"
 ];
 var audio_files_noise = [
-  "https://dev.ideas-block.com/mixer/files/bike/noise/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/noise/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/noise/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/noise/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/bike/noise/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-1.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-2.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-3.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-4.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-5.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-6.mp3",
+  "https://dev.ideas-block.com/mixer/files/bike/noise/5-7.mp3"
 ];
 
 
@@ -119,7 +128,7 @@ randomButton1.addEventListener('click', function() {
 	
 	audioElement.pause();
 	audioElement.currentTime = 0;
-	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 	if (playbutton.dataset.playing === 'true') {
 		audioElement.play();
 	}
@@ -131,7 +140,7 @@ randomButton2.addEventListener('click', function() {
 	
 	audioElement2.pause();
 	audioElement2.currentTime = 0;
-	document.getElementById('track1').src = audio_files_nature   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track1').src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
 	if (playbutton.dataset.playing === 'true') {
 		audioElement2.play();
 	}
@@ -142,7 +151,7 @@ randomButton3.addEventListener('click', function() {
 	
 	audioElement3.pause();
 	audioElement3.currentTime = 0;
-	document.getElementById('track1').src = audio_files_people   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track1').src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
 	if (playbutton.dataset.playing === 'true') {
 		audioElement3.play();
 	}
@@ -153,7 +162,7 @@ randomButton4.addEventListener('click', function() {
 	
 	audioElement4.pause();
 	audioElement4.currentTime = 0;
-	document.getElementById('track1').src = audio_files_silence   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track1').src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
 	if (playbutton.dataset.playing === 'true') {
 		audioElement4.play();
 	}
@@ -164,7 +173,7 @@ randomButton5.addEventListener('click', function() {
 	
 	audioElement5.pause();
 	audioElement5.currentTime = 0;
-	document.getElementById('track1').src = audio_files_noise   [Math.floor(Math.random() * 5)]  ;
+	document.getElementById('track1').src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
 	if (playbutton.dataset.playing === 'true') {
 		audioElement5.play();
 	}
