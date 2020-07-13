@@ -60,39 +60,39 @@ reverbjs.extend(audioCtx);
 
 
 var audio_files_city = [
-  "https://dev.ideas-block.com/mixer/files/day/city/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/city/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/city/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/city/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/city/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/night/city/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/city/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/city/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/city/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/city/5.mp3"
 ];
 var audio_files_nature = [
-  "https://dev.ideas-block.com/mixer/files/day/nature/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/nature/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/nature/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/nature/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/nature/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/night/nature/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/nature/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/nature/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/nature/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/nature/5.mp3"
 ];
 var audio_files_people = [
-  "https://dev.ideas-block.com/mixer/files/day/people/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/people/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/people/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/people/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/people/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/night/people/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/people/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/people/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/people/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/people/5.mp3"
 ];
 var audio_files_silence = [
-  "https://dev.ideas-block.com/mixer/files/day/silence/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/silence/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/silence/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/silence/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/silence/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/night/silence/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/silence/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/silence/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/silence/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/silence/5.mp3"
 ];
 var audio_files_noise = [
-  "https://dev.ideas-block.com/mixer/files/day/noise/1.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/noise/2.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/noise/3.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/noise/4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/noise/5.mp3"
+  "https://dev.ideas-block.com/mixer/files/night/noise/1.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/noise/2.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/noise/3.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/noise/4.mp3",
+  "https://dev.ideas-block.com/mixer/files/night/noise/5.mp3"
 ];
 
 

@@ -3,6 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mixer</title>
 
 <link rel="stylesheet" href="bootstrap.min.css">
@@ -13,25 +14,49 @@
 <body>
 
 <div id="headers" style="margin-left: 20px">
-  <h1>SOUND(e)SCAPE. SCENE1.</h1> 
+  <h1>SOUND(e)SCAPE.</h1> 
+  <h2>Take a <strike>photo</strike> sound:</h2>
 </div>
 
 <div id="all_grid" >
 
   <div id="audio_files">
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/percussion.mp3" id="track1" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/assortment.mp3" id="track2" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/bass.mp3"       id="track3" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/lead.mp3"       id="track4" crossorigin="anonymous" ></audio>
-    <audio  loop src="https://dev.ideas-block.com/mixer/files/harmony.mp3"    id="track5" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/night/city/1.mp3"    id="track1" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/night/nature/1.mp3"  id="track2" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/night/people/1.mp3"  id="track3" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/night/silence/1.mp3" id="track4" crossorigin="anonymous" ></audio>
+    <audio  loop src="https://dev.ideas-block.com/mixer/files/night/noise/1.mp3"   id="track5" crossorigin="anonymous" ></audio>
   </div>
   
+<div id="intro_left"  style="margin-left: 20px"  >
+  <span>
+    <p  id="content_text_intro_left"
+        class="row title intro"
+        style=' color:black; 
+                font-family:"lato";
+                margin-right: 10px;
+                text-align:justify;
+                '>
+
+    </p>
+  </span>
+</div>
   
 
 <div id="left_side"  style="margin-left: 20px"  >
    <!-- ABOUT TEXT, TO BE ADDED LATER VIA JS SCRIPT -->
           <div id="content">
-           <h2>Take a <strike>photo</strike> sound:</h2>
+            
+            <span>
+            <p  id="content_text_intro"
+                class="row title intro"
+                style=' color:black; 
+                        font-family:"lato";
+                        margin-right: 10px;
+                        text-align:justify;
+                        '>
+
+            </p></span>
             <p  id="content_text" 
                 class="row title" 
                 style=' color:black; 
@@ -46,7 +71,7 @@
 
 <div id="right_side">
   
-  <h2>Recordings</h2>
+  <!-- <h2>Įrašai</h2> -->
     <ul id="recordingslist"></ul>
 </div>
 
@@ -54,11 +79,12 @@
 
   <p></p>
 
-  <a href="https://dev.ideas-block.com/mixer/" class="btn btn-primary" style="grid-area: scene1;">Scene 1</a>
-  <a href="scene_2.html" class="btn btn-primary" style="grid-area: scene2;">Scene 2</a>
-  <a href="scene_3.html" class="btn btn-primary" style="grid-area: scene3;">Scene 3</a>
-  <a href="scene_4.html" class="btn btn-primary" style="grid-area: scene4;">Scene 4</a>
-  <a href="scene_5.html" class="btn btn-primary" style="grid-area: scene5;">Scene 5</a>
+  <!-- <a class="btn btn-primary" id="randomButton" style="grid-area: scene1;">Random...</a> -->
+  <a href="https://dev.ideas-block.com/mixer/" class="btn btn-primary" style="grid-area: scene1;">Day Walk</a>
+  <a href="scene_night.html" class="btn btn-primary active" role="button" aria-pressed="true"   style="grid-area: scene2;">Night Walk</a>
+  <a href="scene_bike.html" class="btn btn-primary" style="grid-area: scene3;">Bike Walk</a>
+<!--   <a href="scene_4.html" class="btn btn-primary" style="grid-area: scene4;">Scene 4</a>
+  <a href="scene_5.html" class="btn btn-primary" style="grid-area: scene5;">Scene 5</a> -->
 
   <p></p>
 
@@ -246,7 +272,7 @@
         <option value="0" label="min">
         <option value="2" label="max">
       </datalist>
-      <label for="vol_label_5">Triukšmas <br>Noise</label>
+      <label for="vol_label_5" >Triukšmas <br>Noise</label>
 
       <!-- VOL MASTER-->
       <input type="range" id="volumeMASTER" class="control-volume-MASTER" min="0" max="1.5" value="1" list="gain-vals" step="0.01" data-action="volume" />
@@ -256,11 +282,21 @@
       </datalist>
 
 
-      <label for="vol_label_MASTER">MASTER</label>
-      <label for="vol_label_aux1">Reverb</label>
-      <label for="vol_label_aux2">Delay</label>
-      <label for="vol_label_aux3">Chorus</label>
-      <label for="vol_label_aux4">Overdrive</label>
+      <label for="vol_label_MASTER">GARSUMAS <br>MASTER</label>
+
+      <label for="vol_label_aux1"><span class="large">Reverb</span><span class="mobile">Rvrb.</span></label>
+
+      <label for="vol_label_aux2"><span class="large">Delay</span><span class="mobile">Dly.</span></label>
+      <label for="vol_label_aux3"><span class="large">Chorus</span><span class="mobile">Chr.</span></label>
+      <label for="vol_label_aux4"><span class="large">Overdrive</span><span class="mobile">Ovr.</span></label>
+
+
+      <a class="btn btn-primary randombutton" id="randomButton" style="font-size:11px; grid-area: random1;"><span class="large">MIX</span><span class="mobile">MIX</span></a>
+      <a class="btn btn-primary randombutton" id="randomButton2" style="font-size:11px; grid-area: random2;"><span class="large">MIX</span><span class="mobile">MIX</span></a>
+      <a class="btn btn-primary randombutton" id="randomButton3" style="font-size:11px; grid-area: random3;"><span class="large">MIX</span><span class="mobile">MIX</span></a>
+      <a class="btn btn-primary randombutton" id="randomButton4" style="font-size:11px; grid-area: random4;"><span class="large">MIX</span><span class="mobile">MIX</span></a>
+      <a class="btn btn-primary randombutton" id="randomButton5" style="font-size:11px; grid-area: random5;"><span class="large">MIX</span><span class="mobile">MIX</span></a>
+
    
       <div class="playback-controls">
         <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
