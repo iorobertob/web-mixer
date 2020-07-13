@@ -119,7 +119,7 @@ const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
 	// audioElement.pause();
-	audioElement.currentTime = 0;
+	// audioElement.currentTime = 0;
 
 	var audio = document.getElementById('track1');
 	var source = document.getElementById('audioSource');
