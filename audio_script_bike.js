@@ -130,13 +130,17 @@ randomButton1.addEventListener('click', function() {
 
 	audioElement.pause();
 	audioElement.currentTime = 0;
-	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
 	document.getElementById('track1').oncanplay = function(event) {
     	// if (playButton.dataset.playing === 'true') {
 			audioElement.play();
 		// }
 	};
+
+	
+	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
+
+	
 	
 	
 
