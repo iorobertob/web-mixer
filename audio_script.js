@@ -113,7 +113,7 @@ var audio_files_noise = [
   "https://dev.ideas-block.com/mixer/files/day/noise/5-2.mp3",
   "https://dev.ideas-block.com/mixer/files/day/noise/5-3.mp3",
   "https://dev.ideas-block.com/mixer/files/day/noise/5-4.mp3",
-  "https://dev.ideas-block.com/mixer/files/day/noise/5-5.mp3"
+  "https://dev.ideas-block.com/mixer/files/day/noise/5-5.mp3",
   "https://dev.ideas-block.com/mixer/files/day/noise/5-6.mp3",
   "https://dev.ideas-block.com/mixer/files/day/noise/5-7.mp3",
   "https://dev.ideas-block.com/mixer/files/day/noise/5-8.mp3",
