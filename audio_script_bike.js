@@ -136,12 +136,14 @@ randomButton1.addEventListener('click', function() {
 	// 		audioElement.play();
 	// 	// }
 	// };
-
-	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
+	var audio = document.getElementById('track1');
+	var source = document.getElementById('audioSource');
+	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
+	// document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
 	// var loadPromise = document.getElementById('track1').load();
-	document.getElementById('track1').load();
-	document.getElementById('track1').play();
+	audio.load();
+	audio.play();
 
 	// if (loadPromise !== undefined) {
  //    loadPromise.then(_ => {
