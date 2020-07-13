@@ -134,7 +134,7 @@ randomButton1.addEventListener('click', function() {
 
 		audio.play().then(function() {
 		    // Automatic playback started!
-		    layButton.dataset.playing = 'true';
+		    playButton.dataset.playing = 'true';
 		    alert("lala");
 		  }).catch(function(error) {
 		    // Automatic playback failed.
