@@ -131,14 +131,29 @@ randomButton1.addEventListener('click', function() {
 	audioElement.pause();
 	audioElement.currentTime = 0;
 
-	document.getElementById('track1').oncanplay = function(event) {
-    	// if (playButton.dataset.playing === 'true') {
-			audioElement.play();
-		// }
-	};
+	// document.getElementById('track1').oncanplay = function(event) {
+ //    	// if (playButton.dataset.playing === 'true') {
+	// 		audioElement.play();
+	// 	// }
+	// };
+
+	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
+	
+	var loadPromise = document.getElementById('track1').load();
+
+	if (loadPromise !== undefined) {
+    loadPromise.then(_ => {
+      // Automatic playback started!
+      // Show playing UI.
+      audioElement.play();
+    })
+    .catch(error => {
+      // Auto-play was prevented
+      // Show paused UI.
+    });
+  }
 
 	
-	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
 	
 	
