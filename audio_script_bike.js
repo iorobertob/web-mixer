@@ -133,7 +133,6 @@ randomButton1.addEventListener('click', function() {
 	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
 	document.getElementById('track1').onloadeddata = function() {
-    	alert("Browser has loaded the current frame");
     	if (playButton.dataset.playing === 'true') {
 			audioElement.play();
 		}
