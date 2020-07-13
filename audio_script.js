@@ -215,7 +215,7 @@ randomButton1.addEventListener('click', function() {
 }, false);
 const randomButton2 = document.getElementById('randomButton');
 randomButton2.addEventListener('click', function() {
-	
+	playButton.dataset.playing='false';
 	audioElement2.pause();
 	audioElement2.currentTime = 0;
 	document.getElementById('track1').src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
@@ -226,6 +226,7 @@ randomButton2.addEventListener('click', function() {
 }, false);
 const randomButton3 = document.getElementById('randomButton');
 randomButton3.addEventListener('click', function() {
+  playButton.dataset.playing='false';
 	
 	audioElement3.pause();
 	audioElement3.currentTime = 0;
@@ -237,6 +238,8 @@ randomButton3.addEventListener('click', function() {
 }, false);
 const randomButton4 = document.getElementById('randomButton');
 randomButton4.addEventListener('click', function() {
+
+  playButton.dataset.playing='false';
 	
 	audioElement4.pause();
 	audioElement4.currentTime = 0;
@@ -248,6 +251,8 @@ randomButton4.addEventListener('click', function() {
 }, false);
 const randomButton5 = document.getElementById('randomButton');
 randomButton5.addEventListener('click', function() {
+  
+  playButton.dataset.playing='false';
 	
 	audioElement5.pause();
 	audioElement5.currentTime = 0;
