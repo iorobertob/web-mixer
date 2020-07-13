@@ -145,7 +145,7 @@ randomButton2.addEventListener('click', function() {
 	var audio  = document.getElementById('track2');
 	var source = document.getElementById('audioSource2');
 	source.src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
-	alert(source.src);
+	// alert(source.src);
 	audio.load();
 
 	if (playButton.dataset.playing === 'true') 
