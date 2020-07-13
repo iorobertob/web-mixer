@@ -133,6 +133,9 @@ randomButton1.addEventListener('click', function() {
 		audio.play().then(function() {
 		    // Playback started!
 		    playButton.dataset.playing = 'true';
+
+		    playAudio();
+		    
 		  }).catch(function(error) {
 		    // Playback failed.
 		    alert(error);
@@ -518,6 +521,15 @@ powerButton.addEventListener('click', function() {
 }, false);
 
 
+function playAudio()
+{
+	audioElement.play();
+	audioElement2.play();
+	audioElement3.play();
+	audioElement4.play();
+	audioElement5.play();
+	playButton.dataset.playing = 'true';
+}
 // PLAY BUTTON 
 const playButton = document.querySelector('.tape-controls-play');
 playButton.addEventListener('click', function() {
@@ -528,12 +540,7 @@ playButton.addEventListener('click', function() {
 		audioCtx.resume();
 	}
 	if (this.dataset.playing === 'false') {
-		audioElement.play();
-		audioElement2.play();
-		audioElement3.play();
-		audioElement4.play();
-		audioElement5.play();
-		this.dataset.playing = 'true';
+		playAudio();
 
 	// if track is playing pause it
 	} else if (this.dataset.playing === 'true') {
