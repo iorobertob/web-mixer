@@ -144,7 +144,7 @@ randomButton1.addEventListener('click', function() {
 	}
 
 }, false);
-const randomButton2 = document.getElementById('randomButton');
+const randomButton2 = document.getElementById('randomButton2');
 randomButton2.addEventListener('click', function() {
 
 	alert("boo");
@@ -158,7 +158,7 @@ randomButton2.addEventListener('click', function() {
 	}
 
 }, false);
-const randomButton3 = document.getElementById('randomButton');
+const randomButton3 = document.getElementById('randomButton3');
 randomButton3.addEventListener('click', function() {
 
 	playButton.dataset.playing='false';
@@ -171,7 +171,7 @@ randomButton3.addEventListener('click', function() {
 	}
 
 }, false);
-const randomButton4 = document.getElementById('randomButton');
+const randomButton4 = document.getElementById('randomButton4');
 randomButton4.addEventListener('click', function() {
 
 	playButton.dataset.playing='false';
@@ -184,7 +184,7 @@ randomButton4.addEventListener('click', function() {
 	}
 
 }, false);
-const randomButton5 = document.getElementById('randomButton');
+const randomButton5 = document.getElementById('randomButton5');
 randomButton5.addEventListener('click', function() {
 
 	playButton.dataset.playing='false';
