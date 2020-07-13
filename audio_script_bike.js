@@ -116,27 +116,27 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 
 // RANDOM BUTTONS
 // Random 1
-const randomButton1 = document.getElementById('randomButton');
-randomButton1.addEventListener('click', function() {
+// const randomButton1 = document.getElementById('randomButton');
+// randomButton1.addEventListener('click', function() {
 
-	var audio  = document.getElementById('track1');
-	var source = document.getElementById('audioSource');
-	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
+// 	var audio  = document.getElementById('track1');
+// 	var source = document.getElementById('audioSource');
+// 	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
-	audio.load();
+// 	audio.load();
 
-	if (playButton.dataset.playing === 'true') 
-	{
-		audio.play().then(function() {
-		    // Playback started!
-		    playButton.dataset.playing = 'true';
-		  }).catch(function(error) {
-		    // Playback failed.
-		    alert(error);
-		  });
-	}
+// 	if (playButton.dataset.playing === 'true') 
+// 	{
+// 		audio.play().then(function() {
+// 		    // Playback started!
+// 		    playButton.dataset.playing = 'true';
+// 		  }).catch(function(error) {
+// 		    // Playback failed.
+// 		    alert(error);
+// 		  });
+// 	}
 
-}, false);
+// }, false);
 
 // Random 2
 const randomButton2 = document.getElementById('randomButton2');
