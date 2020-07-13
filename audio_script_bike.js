@@ -142,6 +142,7 @@ randomButton1.addEventListener('click', function() {
 		  }).catch(function(error) {
 		    // Automatic playback failed.
 		    // Show a UI element to let the user manually start playback.
+		    alert("undefined");
 		  });
 }
 
