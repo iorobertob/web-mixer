@@ -118,8 +118,6 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
-	// audioElement.pause();
-	// audioElement.currentTime = 0;
 
 	var audio = document.getElementById('track1');
 	var source = document.getElementById('audioSource');
@@ -129,12 +127,10 @@ randomButton1.addEventListener('click', function() {
 
 	if (playButton.dataset.playing === 'true') 
 	{
-
 		audio.play().then(function() {
 		    // Playback started!
 		    playButton.dataset.playing = 'true';
-
-		    playAudio();
+		    // playAudio();
 
 		  }).catch(function(error) {
 		    // Playback failed.
