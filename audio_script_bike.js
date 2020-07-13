@@ -115,11 +115,11 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 
 
 // RANDOM BUTTONS
+// Random 1
 const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
-
-	var audio = document.getElementById('track1');
+	var audio  = document.getElementById('track1');
 	var source = document.getElementById('audioSource');
 	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
@@ -130,66 +130,103 @@ randomButton1.addEventListener('click', function() {
 		audio.play().then(function() {
 		    // Playback started!
 		    playButton.dataset.playing = 'true';
-		    // playAudio();
-
 		  }).catch(function(error) {
 		    // Playback failed.
 		    alert(error);
 		  });
-
 	}
 
 }, false);
+
+// Random 2
 const randomButton2 = document.getElementById('randomButton2');
 randomButton2.addEventListener('click', function() {
 
-	alert("boo");
-	playButton.dataset.playing='false';
-	
-	audioElement2.pause();
-	audioElement2.currentTime = 0;
-	document.getElementById('track2').src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
-	if (playButton.dataset.playing === 'true') {
-		audioElement2.play();
+	var audio  = document.getElementById('track2');
+	var source = document.getElementById('audioSource');
+	source.src = audio_files_nature   [Math.floor(Math.random() * audio_files_nature.length)]  ;
+
+	audio.load();
+
+	if (playButton.dataset.playing === 'true') 
+	{
+		audio.play().then(function() {
+		    // Playback started!
+		    playButton.dataset.playing = 'true';
+		  }).catch(function(error) {
+		    // Playback failed.
+		    alert(error);
+		  });
 	}
 
 }, false);
+
+
+// Random 3
 const randomButton3 = document.getElementById('randomButton3');
 randomButton3.addEventListener('click', function() {
 
-	playButton.dataset.playing='false';
-	
-	audioElement3.pause();
-	audioElement3.currentTime = 0;
-	document.getElementById('track3').src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
-	if (playButton.dataset.playing === 'true') {
-		audioElement3.play();
+	var audio  = document.getElementById('track3');
+	var source = document.getElementById('audioSource');
+	source.src = audio_files_people   [Math.floor(Math.random() * audio_files_people.length)]  ;
+
+	audio.load();
+
+	if (playButton.dataset.playing === 'true') 
+	{
+		audio.play().then(function() {
+		    // Playback started!
+		    playButton.dataset.playing = 'true';
+		  }).catch(function(error) {
+		    // Playback failed.
+		    alert(error);
+		  });
 	}
 
 }, false);
+
+// Random 4
 const randomButton4 = document.getElementById('randomButton4');
 randomButton4.addEventListener('click', function() {
 
-	playButton.dataset.playing='false';
-	
-	audioElement4.pause();
-	audioElement4.currentTime = 0;
-	document.getElementById('track4').src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
-	if (playButton.dataset.playing === 'true') {
-		audioElement4.play();
+	var audio  = document.getElementById('track4');
+	var source = document.getElementById('audioSource');
+	source.src = audio_files_silence   [Math.floor(Math.random() * audio_files_silence.length)]  ;
+
+	audio.load();
+
+	if (playButton.dataset.playing === 'true') 
+	{
+		audio.play().then(function() {
+		    // Playback started!
+		    playButton.dataset.playing = 'true';
+		  }).catch(function(error) {
+		    // Playback failed.
+		    alert(error);
+		  });
 	}
 
 }, false);
+
+// Random 5
 const randomButton5 = document.getElementById('randomButton5');
 randomButton5.addEventListener('click', function() {
 
-	playButton.dataset.playing='false';
-	
-	audioElement5.pause();
-	audioElement5.currentTime = 0;
-	document.getElementById('track5').src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
-	if (playButton.dataset.playing === 'true') {
-		audioElement5.play();
+	var audio  = document.getElementById('track5');
+	var source = document.getElementById('audioSource');
+	source.src = audio_files_noise   [Math.floor(Math.random() * audio_files_noise.length)]  ;
+
+	audio.load();
+
+	if (playButton.dataset.playing === 'true') 
+	{
+		audio.play().then(function() {
+		    // Playback started!
+		    playButton.dataset.playing = 'true';
+		  }).catch(function(error) {
+		    // Playback failed.
+		    alert(error);
+		  });
 	}
 
 }, false);
