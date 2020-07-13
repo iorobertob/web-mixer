@@ -138,18 +138,20 @@ randomButton1.addEventListener('click', function() {
 	// };
 
 	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
-	
+
 	var loadPromise = document.getElementById('track1').load();
 
 	if (loadPromise !== undefined) {
     loadPromise.then(_ => {
       // Automatic playback started!
       // Show playing UI.
+      alert('si');
       audioElement.play();
     })
     .catch(error => {
       // Auto-play was prevented
       // Show paused UI.
+      alert('not');
     });
   }
 
