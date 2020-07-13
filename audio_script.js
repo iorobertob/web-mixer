@@ -145,7 +145,7 @@ randomButton1.addEventListener('click', function() {
 	audioElement.pause();
 	audioElement.currentTime = 0;
 	document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
-	if (playbutton.dataset.playing === 'true') {
+	if (this.playbutton.dataset.playing === 'true') {
 		audioElement.play();
 	}
 	
