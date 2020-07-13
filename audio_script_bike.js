@@ -135,7 +135,7 @@ randomButton1.addEventListener('click', function() {
 		    playButton.dataset.playing = 'true';
 
 		    playAudio();
-		    
+
 		  }).catch(function(error) {
 		    // Playback failed.
 		    alert(error);
@@ -147,6 +147,7 @@ randomButton1.addEventListener('click', function() {
 const randomButton2 = document.getElementById('randomButton');
 randomButton2.addEventListener('click', function() {
 
+	alert("boo");
 	playButton.dataset.playing='false';
 	
 	audioElement2.pause();
