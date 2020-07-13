@@ -37,15 +37,7 @@ function randomiseTracks(){
 	audioElement4 = document.getElementById('track4');
 	audioElement5 = document.getElementById('track5');
 
-	// track  = audioCtx.createMediaElementSource(audioElement);
-	// track2 = audioCtx.createMediaElementSource(audioElement2);
-	// track3 = audioCtx.createMediaElementSource(audioElement3);
-	// track4 = audioCtx.createMediaElementSource(audioElement4);
-	// track5 = audioCtx.createMediaElementSource(audioElement5);
-
 }
-
-
 
 
 // instigate our audio context
@@ -58,7 +50,7 @@ var tuna = new Tuna(audioCtx);
 
 reverbjs.extend(audioCtx);
 
-
+// TODO: get this automaticcaly by scannig the folders...
 var audio_files_city = [
   "https://dev.ideas-block.com/mixer/files/bike/city/1-1.mp3",
   "https://dev.ideas-block.com/mixer/files/bike/city/1-2.mp3",
@@ -126,44 +118,19 @@ var track5 = audioCtx.createMediaElementSource(audioElement5);
 const randomButton1 = document.getElementById('randomButton');
 randomButton1.addEventListener('click', function() {
 
-	// playButton.dataset.playing='false';
-
 	audioElement.pause();
 	audioElement.currentTime = 0;
 
-	// document.getElementById('track1').oncanplay = function(event) {
- //    	// if (playButton.dataset.playing === 'true') {
-	// 		audioElement.play();
-	// 	// }
-	// };
 	var audio = document.getElementById('track1');
 	var source = document.getElementById('audioSource');
 	source.src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
-	// document.getElementById('track1').src = audio_files_city   [Math.floor(Math.random() * audio_files_city.length)]  ;
 
-	// var loadPromise = document.getElementById('track1').load();
 	audio.load();
-	audio.play();
 
-	// if (loadPromise !== undefined) {
- //    loadPromise.then(_ => {
- //      // Automatic playback started!
- //      // Show playing UI.
- //      alert('si');
- //      audioElement.play();
- //    })
- //    .catch(error => {
- //      // Auto-play was prevented
- //      // Show paused UI.
- //      alert('not');
- //    });
- //  }
-
-	
-
-	
-	
-	
+	if (playButton.dataset.playing === 'true') 
+	{
+		audio.play();
+	}
 
 }, false);
 const randomButton2 = document.getElementById('randomButton');
