@@ -1,6 +1,7 @@
     (function() {
       var httpRequest;
-      httpRequest = new XMLHttpRequest();
+      httpRequest       = new XMLHttpRequest();
+      httpRequestIntro  = new XMLHttpRequest();
 
       if (!httpRequest) {
           alert('Giving up :( Cannot create an XMLHTTP instance');
