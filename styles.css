@@ -77,9 +77,9 @@ body {
 	grid-area:body2_3;
 }
 
-#instructions_text_left{
+/*#instructions_text_left{
 	display: none;
-}
+}*/
 #instructions_text{
 	display: block;
 }
@@ -94,10 +94,7 @@ body {
 }
 @media screen and (max-width: 600px) {
 
-	#instructions_text_left{
-		display: block;
-		/*margin-right: 20px;*/
-	}
+/*s*/
 	#instructions_text{
 		display: none;
 	}

@@ -51,7 +51,7 @@
        if (httpRequestInstr.readyState === XMLHttpRequest.DONE) {
          if (httpRequestInstr.status === 200) {
           //Set the contents of your p tag
-           document.getElementById("instructions_text").innerHTML = httpRequestInstr.responseText;
+           // document.getElementById("instructions_text").innerHTML = httpRequestInstr.responseText;
            document.getElementById("instructions_text_left").innerHTML = httpRequestInstr.responseText;
           } else {
            alert('There was a problem with the request.');
