@@ -466,7 +466,13 @@ playButton.addEventListener('click', function() {
     audioCtx.resume();
   }
   if (this.dataset.playing === 'false') {
-    playAudio();
+    // playAudio();
+    audioElement.play();
+    audioElement2.play();
+    audioElement3.play();
+    audioElement4.play();
+    audioElement5.play();
+    this.dataset.playing = 'true';
 
   // if track is playing pause it
   } else if (this.dataset.playing === 'true') {
