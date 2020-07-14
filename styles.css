@@ -73,6 +73,10 @@ body {
 	grid-area:body2_2;
 }
 
+#instructions{
+	grid-area:body2_3;
+}
+
 
 #intro_left{
 	grid-area:body1;

@@ -2,6 +2,7 @@
       var httpRequest;
       httpRequest       = new XMLHttpRequest();
       httpRequestIntro  = new XMLHttpRequest();
+      httpRequestInstr  = new XMLHttpRequest();
 
       if (!httpRequest) {
           alert('Giving up :( Cannot create an XMLHTTP instance');
@@ -10,12 +11,17 @@
 
       httpRequest.onreadystatechange      = setContents;
       httpRequestIntro.onreadystatechange = setContentsIntro;
+      httpRequestInstr.onreadystatechange = setContentsInstr;
+
       //Open then send the request to your page
       httpRequest.open('GET', "https://dev.ideas-block.com/mixer/files/content_text.txt");
       httpRequest.send();
 
       httpRequestIntro.open('GET', "https://dev.ideas-block.com/mixer/files/intro.txt");
       httpRequestIntro.send();
+
+      httpRequestInstr.open('GET', "https://dev.ideas-block.com/mixer/files/instrukcija.txt");
+      httpRequestInstr.send();
        
 
       function setContents() {
@@ -41,12 +47,15 @@
         }
       }
 
-
-
-
-
-
-
-
+      function setContentsInstr() {
+       if (httpRequestInstr.readyState === XMLHttpRequest.DONE) {
+         if (httpRequestInstr.status === 200) {
+          //Set the contents of your p tag
+           document.getElementById("instructions_text").innerHTML = httpRequestIntro.responseText;
+          } else {
+           alert('There was a problem with the request.');
+          }
+        }
+      }
 
     })(); 
