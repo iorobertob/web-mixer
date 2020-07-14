@@ -77,6 +77,12 @@ body {
 	grid-area:body2_3;
 }
 
+#instructions_text_left{
+	display: none;
+}
+#instructions_text{
+	display: block;
+}
 
 #intro_left{
 	grid-area:body1;
@@ -87,6 +93,14 @@ body {
 	grid-area:body3;
 }
 @media screen and (max-width: 600px) {
+
+	#instructions_text_left{
+		display: block;
+		/*margin-right: 20px;*/
+	}
+	#instructions_text{
+		display: none;
+	}
 
 	#content span{display: block;}
 	
