@@ -1,6 +1,14 @@
 # web-mixer
 Web based audio mixer
 
+Uses:
+* Audio Web API. https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+* ReverbJS. http://reverbjs.org/
+* Tuna effects. https://github.com/Theodeus/tuna
+* Recorder.js . https://github.com/mattdiamond/Recorderjs
+
+
+Specially done for the SOUND(e)SCAPE project.
 # SOUND(e)SCAPE
 ##   Take a photo sound
 
