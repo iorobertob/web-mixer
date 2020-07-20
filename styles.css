@@ -48,7 +48,8 @@ body {
 
 #all_grid{
 	display: grid;
-	grid-template-columns: 20% 50% 25%;
+	/*grid-template-columns: 20% 50% 25%;*/
+	grid-template-columns: repeat(3, auto);
 	grid-template-rows: repeat(3, auto);
 	grid-template-areas: 
 	"body1 body2 body3"
@@ -123,8 +124,12 @@ body {
 #boombox {
 	grid-area: body2;
 	width: 90vw; 
-	max-width: 800px; 
+	max-width: 700px; 
 	margin: 0px auto;
+}
+
+#left_side1{
+	grid-area:body2;
 }
 @media screen and (max-width: 600px) {
 	#boombox {
